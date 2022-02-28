@@ -69,6 +69,4 @@ plot_save <- function(plot_name, # first put the plot object name
     theme(legend.position = "right")
 )
 
-#### Total Pb----
-
 
