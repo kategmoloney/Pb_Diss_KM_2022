@@ -6,6 +6,7 @@ getwd()
 library(dplyr)
 library(tidyverse) 
 library(ggplot2)
+library(tidyr)  
 
 Pb_data <- read.csv("Pb_tidy.csv")
 str(Pb_data)
@@ -75,9 +76,17 @@ plot_save(Pb_OS_plot, file_name = "Plots/Mixing plot grouped by OS grid", width 
     xlab("\nPb208/Pb207") +
     theme(legend.position = "right")
 )
-plot_save(Pb_resevoir_plot, file_name = "Plots/Mixing plot grouped by OS regionr", width = 13, 
+plot_save(Pb_resevoir_plot, file_name = "Plots/Mixing plot grouped by OS region", width = 13, 
           height = 8, dpi = 150) 
 
 #### Total Pb----
-
+levels(Pb_data$Total_Pb)<- c("<1","1-5",">5")
+Pb_data <- Pb_data %>% 
+           group_by(Legislative_cutoffs =
+                  case_when(
+                  Total_Pb <1 ~ "<1",
+                  Total_Pb >=1 & Total_Pb <=5 ~ "1-5",
+                  Total_Pb >5 ~ ">5"
+                  ))
+           
 
