@@ -8,7 +8,7 @@ library(tidyverse)
 library(ggplot2)
 library(tidyr)  
 
-Pb_data <- read.csv("Pb_tidy.csv")
+Pb_data <- read.csv("Data/Pb_tidy.csv")
 str(Pb_data)
 
 
@@ -88,5 +88,18 @@ Pb_data <- Pb_data %>%
                   Total_Pb >=1 & Total_Pb <=5 ~ "1-5",
                   Total_Pb >5 ~ ">5"
                   ))
-           
+
+Leg_cutoffs <- Pb_data %>% select(Legislative_cutoffs)    
+list(Leg_cutoffs)
+
+(Pb_legcutoff_plot <- ggplot(Pb_data, aes (x = Pb206_207 , y = Pb208_207, colour = Legislative_cutoffs)) +
+    geom_point(size = 4) +                                               # Changing point size              # Adding linear model fit
+    theme_ps() + 
+    ylab("Pb206/Pb207\n") +                             
+    xlab("\nPb208/Pb207") +
+    theme(legend.position = "right")
+)
+
+plot_save(Pb_legcutoff_plot, file_name = "Plots/Mixing plot grouped by legaslative cutoffs", width = 13, 
+          height = 8, dpi = 150) 
 
