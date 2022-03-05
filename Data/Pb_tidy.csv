@@ -1,350 +1,350 @@
-Postcode,Supply_reservoir,OS_grid_region,OS_grouping ,Total_Pb ,Pb206_207,Pb208_207
-AB387BY,Badentinan,NJ,North/Above Central,0.11,1.148,2.431
-AB387QP,Badentinan,NJ,North/Above Central,0.472,1.143,2.421
-AB554AH,Badentinan,NJ,North/Above Central,2.42,1.164,2.441
-IV308SL,Badentinan,NJ,North/Above Central,0.276,1.085,2.328
-IV308GY,Glenlatterach,NJ,North/Above Central,0.44,1.104,2.356
-IV308SW,Glenlatterach,NJ,North/Above Central,0.322,1.091,2.355
-AB555FR,Herricks,NJ,North/Above Central,5.782,1.163,2.463
-AB15 7QQ,Mannofield,NJ,North/Above Central,0.198,1.13,2.412
+Postcode,Supply reservoir,OS grid region,OS grouping ,Total Pb  ug L -1,206Pb/207Pb,208Pb/207Pb
+AB15 7QQ,Mannofield,NJ,North/Above Central,0.198,1.130,2.412
 AB15 7QQ,Mannofield,NJ,North/Above Central,0.198,1.133,2.422
-AB155ES,Mannofield,NJ,North/Above Central,35.02,1.164,2.463
-AB155ES,Mannofield,NJ,North/Above Central,35.05,1.157,2.492
-AB155ES,Mannofield,NJ,North/Above Central,34.78,1.161,2.491
+AB155ES,Mannofield,NJ,North/Above Central,34.950,1.158,2.486
 AB158HE,Mannofield,NJ,North/Above Central,-0.086,1.136,2.371
 AB217EB,Mannofield,NJ,North/Above Central,-0.062,1.108,2.363
-AB243UA,Mannofield,NJ,North/Above Central,0.625,1.172,2.45
+AB243UA,Mannofield,NJ,North/Above Central,0.636,1.152,2.422
 AB252QQ,Mannofield,NJ,North/Above Central,2.269,1.156,2.099
-IV305GP,Spynie,NJ,North/Above Central,0.132,1.086,2.344
-IV362TL,Spynie,NJ,North/Above Central,0.116,1.12,2.402
+AB387BY,Badentinan,NJ,North/Above Central,0.110,1.148,2.431
+AB387QP,Badentinan,NJ,North/Above Central,0.472,1.143,2.421
+AB389QN,Badentinan,NJ,North/Above Central,0.532,1.118,2.400
 AB417JY,Turriff,NJ,North/Above Central,0.198,1.146,2.435
 AB425EU,Turriff,NJ,North/Above Central,1.219,1.159,2.423
-AB564BX,Turriff,NJ,North/Above Central,0.347,1.14,2.387
+AB554AH,Badentinan,NJ,North/Above Central,2.420,1.164,2.441
+AB554FS,Badentinan,NJ,North/Above Central,22.68,1.121,2.471
+AB555FR,Herricks,NJ,North/Above Central,5.782,1.163,2.463
+AB564BX,Turriff,NJ,North/Above Central,0.347,1.140,2.387
+IV305GP,Spynie,NJ,North/Above Central,0.132,1.086,2.344
+IV308GY,Glenlatterach,NJ,North/Above Central,0.440,1.104,2.356
+IV308SL,Badentinan,NJ,North/Above Central,0.276,1.085,2.328
+IV308SW,Glenlatterach,NJ,North/Above Central,0.322,1.091,2.355
+IV327QT,Turriff,NJ,North/Above Central,0.093,1.119,2.387
+IV362TL,Spynie,NJ,North/Above Central,0.116,1.120,2.402
 AB420NA,Forehill,NK,North/Above Central,0.149,1.113,2.383
 AB423NH,Forehill,NK,North/Above Central,0.123,1.098,2.344
 AB438YA,Forehill,NK,North/Above Central,0.747,1.152,2.459
-PA344XF,Kilmelford,NM,North/Above Central,0.338,1.164,2.441
+AB438YG,Forehill,NK,North/Above Central,0.648,1.099,2.371
 PA344RX,Tullich,NM,North/Above Central,0.192,1.068,2.322
-PA351HT,"	Taynuilt",NN,North/Above Central,2.389,1.143,2.415
-FK198PB,Balquidder,NN,North/Above Central,0.221,1.1,2.361
+PA344XF,Kilmelford,NM,North/Above Central,0.338,1.164,2.441
+FK103SG,Turret,NN,North/Above Central,0.356,1.159,2.455
+FK125HE,Turret,NN,North/Above Central,0.371,1.089,2.363
 FK178HT,Brig O Turk,NN,North/Above Central,0.088,1.091,2.361
-PH152HB,Kenmore,NN,North/Above Central,2.684,1.126,2.39
+FK188NL,Strathyre,NN,North/Above Central,0.456,1.118,2.381
+FK198PB,Balquidder,NN,North/Above Central,0.221,1.100,2.361
+FK198PN,Lochearnhead,NN,North/Above Central,0.191,1.118,2.395
+FK198QG,Lochearnhead,NN,North/Above Central,0.622,1.134,2.390
+FK208RQ,Tyndrum,NN,North/Above Central,1.422,1.144,2.412
+FK218TE,Killin,NN,North/Above Central,1.039,1.185,2.463
+FK28DS,Turret,NN,North/Above Central,4.283,1.108,2.330
+FK54RH,Turret,NN,North/Above Central,0.156,1.158,2.445
+FK94QQ,Turret,NN,North/Above Central,0.322,1.144,2.418
+PA351HT,"	Taynuilt",NN,North/Above Central,2.389,1.143,2.415
+PH152HB,Kenmore,NN,North/Above Central,2.783,1.120,2.393
 PH152JF,Killiecrankie,NN,North/Above Central,0.261,1.103,2.348
 PH165AY,Killiecrankie,NN,North/Above Central,0.694,1.132,2.402
 PH165BD,Killiecrankie,NN,North/Above Central,0.335,1.111,2.363
 PH165ET,Killiecrankie,NN,North/Above Central,0.497,1.126,2.397
-FK218TE,Killin,NN,North/Above Central,1.039,1.185,2.463
-PH165PY,Kinloch Rannoch,NN,North/Above Central,0.302,1.114,2.36
-PH165PZ,Kinloch Rannoch,NN,North/Above Central,1.669,1.159,2.414
-PH165PZ,Kinloch Rannoch,NN,North/Above Central,1.74,1.153,2.424
-PH165PZ,Kinloch Rannoch,NN,North/Above Central,1.734,1.155,2.439
-FK198PN,Lochearnhead,NN,North/Above Central,0.191,1.118,2.395
-FK198QG,Lochearnhead,NN,North/Above Central,0.622,1.134,2.39
-FK188NL,Strathyre,NN,North/Above Central,0.456,1.118,2.381
-FK103SG,Turret,NN,North/Above Central,0.356,1.159,2.455
-FK125HE,Turret,NN,North/Above Central,0.371,1.089,2.363
-FK28DS,Turret,NN,North/Above Central,4.401,1.111,2.378
-FK54RH,Turret,NN,North/Above Central,0.156,1.158,2.445
-FK94QQ,Turret,NN,North/Above Central,0.322,1.144,2.418
+PH165PY,Kinloch Rannoch,NN,North/Above Central,0.302,1.114,2.360
+PH165PZ,Kinloch Rannoch,NN,North/Above Central,1.714,1.486,2.435
+PH73QH,Turret,NN,North/Above Central,1.122,1.121,2.398
 PH74AF,Turret,NN,North/Above Central,0.008,1.115,2.384
-FK208RQ,Tyndrum,NN,North/Above Central,1.422,1.144,2.412
+AB314FJ,Invercannie,NO,North/Above Central,0.260,1.132,2.374
+AB314TE,Invercannie,NO,North/Above Central,12.500,1.169,2.451
+AB315SB,Invercannie,NO,North/Above Central,0.308,1.118,2.374
+AB315SS,Invercannie,NO,North/Above Central,0.182,1.128,2.385
+AB345AA,Invercannie,NO,North/Above Central,0.478,1.150,2.424
+AB345BY,Invercannie,NO,North/Above Central,0.593,1.131,2.406
+AB345EJ,Invercannie,NO,North/Above Central,13.265,1.136,2.415
+AB392DH,Invercannie,NO,North/Above Central,11.360,1.134,2.419
+AB392ND,Invercannie,NO,North/Above Central,0.331,1.139,2.424
+AB392UD,Whitehillocks,NO,North/Above Central,0.073,1.122,2.370
+AB393TD,Whitehillocks,NO,North/Above Central,-0.038,1.143,2.426
+AB393XH,Whitehillocks,NO,North/Above Central,0.119,1.121,2.381
+AB419WL,Craigie,NO,North/Above Central,0.047,1.115,2.328
+AB544GD,Craigie,NO,North/Above Central,0.756,1.134,2.403
+DD108HW,Lintrathen,NO,North/Above Central,0.109,1.114,2.347
+DD113DE,Lintrathen,NO,North/Above Central,0.302,1.168,2.453
+DD113RP,Lintrathen,NO,North/Above Central,0.070,1.129,2.389
 DD12NL,Clatto,NO,North/Above Central,0.107,1.128,2.371
-DD21QB,Clatto,NO,North/Above Central,0.398,1.12,2.373
+DD21QB,Clatto,NO,North/Above Central,0.398,1.120,2.373
 DD23FT,Clatto,NO,North/Above Central,0.056,1.127,2.345
-DD23FT,Clatto,NO,North/Above Central,0.032,1.08,2.328
-DD24DG,Clatto,NO,North/Above Central,0.098,1.159,2.44
-DD25AL,Clatto,NO,North/Above Central,0.27,1.152,2.429
+DD23FT,Clatto,NO,North/Above Central,0.032,1.080,2.328
+DD24DG,Clatto,NO,North/Above Central,0.098,1.159,2.440
+DD25AL,Clatto,NO,North/Above Central,0.270,1.152,2.429
 DD40AP,Clatto,NO,North/Above Central,0.064,1.144,2.408
 DD47HD,Clatto,NO,North/Above Central,1.363,1.076,2.368
 DD47UN,Clatto,NO,North/Above Central,0.072,1.118,2.343
-DD51ED,Clatto,NO,North/Above Central,1.259,1.176,2.459
-DD51ED,Clatto,NO,North/Above Central,1.229,1.175,2.467
-DD51ED,Clatto,NO,North/Above Central,1.212,1.173,2.455
-DD51ED,Clatto,NO,North/Above Central,1.284,1.185,2.475
+DD51ED,Clatto,NO,North/Above Central,1.246,1.178,2.471
 DD53TL,Clatto,NO,North/Above Central,-0.084,1.169,2.406
 DD77PP,Clatto,NO,North/Above Central,2.864,1.168,2.435
-AB419WL,Craigie,NO,North/Above Central,0.047,1.115,2.328
-AB544GD,Craigie,NO,North/Above Central,0.756,1.134,2.403
-KY138AD,Glenfarg,NO,North/Above Central,0.226,1.1,2.35
-KY138AY,Glenfarg,NO,North/Above Central,0.384,1.136,2.421
-KY139FW,Glenfarg,NO,North/Above Central,0.051,1.139,2.394
-AB314FJ,Invercannie,NO,North/Above Central,0.26,1.132,2.374
-AB314TE,Invercannie,NO,North/Above Central,12.44,1.169,2.445
-AB315SB,Invercannie,NO,North/Above Central,0.308,1.118,2.374
-AB315SS,Invercannie,NO,North/Above Central,0.182,1.128,2.385
-AB345AA,Invercannie,NO,North/Above Central,0.478,1.15,2.424
-AB345EJ,Invercannie,NO,North/Above Central,13.14,1.136,2.411
-AB392ND,Invercannie,NO,North/Above Central,0.331,1.139,2.424
-PH107JL,Kirkmichael,NO,North/Above Central,1.091,1.148,2.409
-DD108HW,Lintrathen,NO,North/Above Central,0.109,1.114,2.347
-DD113DE,Lintrathen,NO,North/Above Central,0.302,1.168,2.453
-DD113RP,Lintrathen,NO,North/Above Central,0.07,1.129,2.389
+DD77QU,Clatto,NO,North/Above Central,1.539,1.154,2.433
 DD82EE,Lintrathen,NO,North/Above Central,0.143,1.131,2.373
-DD97BW,Lintrathen,NO,North/Above Central,0.14,1.121,2.407
-PH139BP,Lintrathen,NO,North/Above Central,0.183,1.098,2.343
+DD82RX,Whitehillocks,NO,North/Above Central,0.124,1.102,2.369
+DD83NJ,Whitehillocks,NO,North/Above Central,1.442,1.152,2.421
+DD84DA,Lintrathen,NO,North/Above Central,0.923,1.115,2.396
+DD97BW,Lintrathen,NO,North/Above Central,0.094,1.133,2.415
+DD97SZ,Whitehillocks,NO,North/Above Central,58.000,1.169,2.536
+DD97TD,Whitehillocks,NO,North/Above Central,0.084,1.124,2.371
+DD97TF,Whitehillocks,NO,North/Above Central,1.307,1.159,2.445
+DD97XX,Whitehillocks,NO,North/Above Central,0.073,1.134,2.373
+KY138AD,Glenfarg,NO,North/Above Central,0.226,1.100,2.350
+KY138AY,Glenfarg,NO,North/Above Central,0.384,1.136,2.421
+KY138QX,Glenfarg,NO,North/Above Central,0.799,1.142,2.424
+KY139FW,Glenfarg,NO,North/Above Central,0.051,1.139,2.394
+PH106HB,Lintrathen,NO,North/Above Central,0.077,1.122,2.381
+PH107JL,Kirkmichael,NO,North/Above Central,1.091,1.148,2.409
 PH12BD,Perth,NO,North/Above Central,0.406,1.119,2.378
 PH12UQ,Perth,NO,North/Above Central,0.233,1.101,2.353
+PH12UR,Perth,NO,North/Above Central,0.096,1.119,2.383
+PH139BP,Lintrathen,NO,North/Above Central,0.183,1.098,2.343
 PH80RG,Perth,NO,North/Above Central,0.303,1.151,2.423
-AB392UD,Whitehillocks,NO,North/Above Central,0.073,1.122,2.37
-AB393TD,Whitehillocks,NO,North/Above Central,-0.038,1.143,2.426
-AB393XH,Whitehillocks,NO,North/Above Central,0.119,1.121,2.381
-DD83NJ,Whitehillocks,NO,North/Above Central,1.442,1.152,2.421
-DD97SZ,Whitehillocks,NO,North/Above Central,58,1.169,2.536
-DD97TD,Whitehillocks,NO,North/Above Central,0.084,1.124,2.371
-DD97TF,Whitehillocks,NO,North/Above Central,1.253,1.165,2.444
-DD97XX,Whitehillocks,NO,North/Above Central,0.073,1.134,2.373
+EH28 3RA,not located in supply zone,not located in supply zone,not located in supply zone,9.037,1.175,2.465
+IV362RR,not located in supply zone,not located in supply zone,not located in supply zone,0.856,1.112,2.381
+PA331BQ,not located in supply zone,not located in supply zone,not located in supply zone,1.658,1.157,2.448
 PA286JP,Campbeltown,NR,Central/South,0.145,1.159,2.406
-KA32TP,Amlaird Milngavie Gorbals Zone,NS,Central/South,0.107,1.125,2.414
+PA318TR,Ardrishaig,NR,Central/South,0.125,1.116,2.385
+EH470PZ,Pateshill,NS,Central/South,0.408,1.079,2.348
 EH477DP,Balmore,NS,Central/South,2.168,1.075,2.355
-EH482LY,Balmore,NS,Central/South,0.623,1.154,2.444
-EH482LY,Balmore,NS,Central/South,0.74,1.137,2.433
+EH482LY,Balmore,NS,Central/South,0.681,1.146,2.293
 EH483RG,Balmore,NS,Central/South,0.172,1.164,2.422
-EH496ED,Balmore,NS,Central/South,0.384,1.16,2.458
+EH496ED,Balmore,NS,Central/South,0.384,1.160,2.458
 EH496LR,Balmore,NS,Central/South,0.217,1.056,2.326
 EH496RH,Balmore,NS,Central/South,1.209,1.176,2.447
-G326PA,Balmore,NS,Central/South,0.885,1.142,2.441
-G333BZ,Balmore,NS,Central/South,0.122,1.111,2.364
-G639DL,Balmore,NS,Central/South,0.017,1.145,2.348
-G642JS,Balmore,NS,Central/South,0.261,1.104,2.364
-G643BS,Balmore,NS,Central/South,0.201,1.092,2.373
-G664DH,Balmore,NS,Central/South,0.164,1.128,2.394
-G665NN,Balmore,NS,Central/South,0.279,1.127,2.377
-G665QS,Balmore,NS,Central/South,0.148,1.101,2.373
-G665QS,Balmore,NS,Central/South,0.076,1.133,2.396
-G668JA,Balmore,NS,Central/South,0.685,1.126,2.368
-G668JX,Balmore,NS,Central/South,0.342,1.123,2.383
-G696QH,Balmore,NS,Central/South,0.027,1.123,2.371
-G697BE,Balmore,NS,Central/South,0.477,1.106,2.368
-G697NA,Balmore,NS,Central/South,0.257,1.177,2.46
-G661EU,Balmore Carron Valley,NS,Central/South,0.011,1.15,2.405
-G662RT,Balmore Carron Valley,NS,Central/South,0.155,1.076,2.323
-G689GG,Balmore Carron Valley,NS,Central/South,0.006,1.117,2.425
-G689GG,Balmore Carron Valley,NS,Central/South,0.003,1.11,2.356
-G444TH,Balmore Castlemilk,NS,Central/South,0.778,1.153,2.423
-G333GD,Balmore ,NS,Central/South,0.247,1.084,2.35
-G333QB,Balmore ,NS,Central/South,0.255,1.09,2.325
-G847AP,Blairlinnans,NS,Central/South,1.825,1.106,2.367
-G614SE,Burncrooks,NS,Central/South,0.038,1.154,2.387
 FK12BX,Carron Valley,NS,Central/South,0.038,1.098,2.363
 FK13DS,Carron Valley,NS,Central/South,1.868,1.127,2.403
 FK20XD,Carron Valley,NS,Central/South,0.047,1.166,2.408
 FK27YH,Carron Valley,NS,Central/South,0.064,1.099,2.379
 FK28BA,Carron Valley,NS,Central/South,-0.017,1.142,2.416
 FK29PR,Carron Valley,NS,Central/South,0.752,1.133,2.404
-FK41TL,Carron Valley,NS,Central/South,0.006,1.162,2.434
-FK41TL,Carron Valley,NS,Central/South,0.044,1.124,2.393
+FK30JN,Turret/Balmore/Carron Valley,NS,Central/South,0.417,1.117,2.391
+FK41TL,Carron Valley,NS,Central/South,0.025,1.143,2.281
 FK53NQ,Carron Valley,NS,Central/South,0.209,1.077,2.324
-FK66AN,Carron Valley,NS,Central/South,0.034,1.113,2.41
+FK66AN,Carron Valley,NS,Central/South,0.034,1.113,2.410
 FK66BH,Carron Valley,NS,Central/South,0.062,1.167,2.407
-G744JZ,Daer,NS,Central/South,9.162,1.163,2.455
-G758GU,Daer,NS,Central/South,0.035,1.161,2.402
-G759FJ,Daer,NS,Central/South,0.25,1.123,2.381
-KA290EJ,Greenock,NS,Central/South,25.71,1.139,2.121
-KA308TD,Greenock,NS,Central/South,0.051,1.151,2.406
 G115BL,Milngavie,NS,Central/South,0.255,1.093,2.344
+G117EG,Milngavie ,NS,Central/South,0.088,1.128,2.408
+G117ES,Milngavie,NS,Central/South,1.865,1.134,2.409
 G117HD,Milngavie,NS,Central/South,0.825,1.116,2.381
-G117QQ,Milngavie,NS,Central/South,0.182,1.08,2.336
-G120NN,Milngavie,NS,Central/South,0.299,1.12,2.374
+G117HD,Milngavie,NS,Central/South,0.700,1.117,2.397
+G117QQ,Milngavie,NS,Central/South,0.182,1.080,2.336
+G120NN,Milngavie,NS,Central/South,0.299,1.120,2.374
+G132TA,Milngavie,NS,Central/South,0.091,1.104,2.383
 G156JZ,Milngavie,NS,Central/South,2.444,1.168,2.441
 G156XB,Milngavie,NS,Central/South,0.072,1.098,2.353
-G157JB,Milngavie,NS,Central/South,0.229,1.097,2.36
+G157JB,Milngavie,NS,Central/South,0.229,1.097,2.360
 G200NH,Milngavie,NS,Central/South,0.527,1.134,2.393
+G209LF,Balmore,NS,Central/South,0.149,1.093,2.370
+G326PA,Balmore,NS,Central/South,0.885,1.142,2.441
 G327AY,Milngavie,NS,Central/South,0.355,1.113,2.374
-G328ES,Milngavie,NS,Central/South,0.083,1.16,2.432
-G402LR,Milngavie,NS,Central/South,-0.008,1.083,2.366
-G402LR,Milngavie,NS,Central/South,0.111,1.118,2.393
-G404SW,Milngavie,NS,Central/South,0.21,1.102,2.35
-G413BQ,Milngavie,NS,Central/South,0.066,1.11,2.384
+G328ES,Milngavie,NS,Central/South,0.083,1.160,2.432
+G328LH,Milngavie,NS,Central/South,0.061,1.114,2.389
+G333BZ,Balmore,NS,Central/South,0.122,1.111,2.364
+G333GD,Balmore ,NS,Central/South,0.247,1.084,2.350
+G333QB,Balmore ,NS,Central/South,0.255,1.090,2.325
+G402LR,Milngavie,NS,Central/South,0.051,1.101,2.380
+G404SW,Milngavie,NS,Central/South,0.210,1.102,2.350
+G413BQ,Milngavie,NS,Central/South,0.066,1.110,2.384
 G413EY,Milngavie,NS,Central/South,0.206,1.087,2.347
-G414HD,Milngavie,NS,Central/South,0.163,1.062,2.31
+G413SP,Milngavie,NS,Central/South,0.167,1.098,2.373
+G414HD,Milngavie,NS,Central/South,0.163,1.062,2.310
 G415BZ,Milngavie,NS,Central/South,1.292,1.155,2.423
-G420BH,Milngavie,NS,Central/South,0.75,1.106,2.36
+G420BH,Milngavie,NS,Central/South,0.750,1.106,2.360
+G420HU,Milngavie,NS,Central/South,0.121,1.090,2.327
 G432AR,Milngavie,NS,Central/South,0.173,1.088,2.336
-G432SR,Milngavie,NS,Central/South,0,1.151,2.366
+G432SR,Milngavie,NS,Central/South,0.000,1.151,2.366
 G444BS,Milngavie,NS,Central/South,0.161,1.079,2.329
+G444TH,Balmore Castlemilk,NS,Central/South,0.778,1.153,2.423
 G444TT,Milngavie,NS,Central/South,1.494,1.159,2.423
-G511AP,Milngavie,NS,Central/South,0.495,1.13,2.394
+G511AP,Milngavie,NS,Central/South,0.495,1.130,2.394
 G513EF,Milngavie,NS,Central/South,0.203,1.149,2.422
 G521HA,Milngavie,NS,Central/South,1.183,1.114,2.378
 G536PX,Milngavie,NS,Central/South,0.093,1.179,2.456
-G611BZ,Milngavie,NS,Central/South,1.791,1.132,2.406
-G611BZ,Milngavie,NS,Central/South,1.803,1.133,2.422
-G611BZ,Milngavie,NS,Central/South,1.754,1.141,2.425
+G611BZ,Milngavie,NS,Central/South,1.783,1.137,2.423
 G611RX,Milngavie,NS,Central/South,0.057,1.133,2.361
-G117EG,Milngavie ,NS,Central/South,0.088,1.128,2.408
-EH470PZ,Pateshill,NS,Central/South,0.408,1.079,2.348
-FK30JN,Turret/Balmore/Carron Valley,NS,Central/South,0.417,1.117,2.391
-EH459NA,Bonnycraig,NT,Central/South,-0.049,1.144,2.349
-EH459NA,Bonnycraig,NT,Central/South,-0.028,1.078,2.31
-EH459NB,Bonnycraig,NT,Central/South,0.298,1.103,2.375
-EH459ND,Bonnycraig,NT,Central/South,0.281,1.102,2.367
-EH320RU,Castle Moffat,NT,Central/South,0.636,1.107,2.385
-EH332DB,Castle Moffat,NT,Central/South,0.828,1.153,2.434
-EH332DB,Castle Moffat,NT,Central/South,0.815,1.155,2.441
-EH332EN,Castle Moffat,NT,Central/South,0.004,1.142,2.383
-EH413BE,Castle Moffat,NT,Central/South,0.051,1.144,2.396
-EH414AE,Castle Moffat,NT,Central/South,0.528,1.104,2.364
-EH104JS,Glencorse,NT,Central/South,1.275,1.164,2.454
-EH104JS,Glencorse,NT,Central/South,1.306,1.166,2.455
+G612BN,Milngavie,NS,Central/South,0.049,1.100,2.336
+G614SE,Burncrooks,NS,Central/South,0.038,1.154,2.387
+G628LQ,Burncrooks,NS,Central/South,0.169,1.129,2.376
+G639DL,Balmore,NS,Central/South,0.017,1.145,2.348
+G642JS,Balmore,NS,Central/South,0.261,1.104,2.364
+G643BS,Balmore,NS,Central/South,0.201,1.092,2.373
+G661EU,Balmore Carron Valley,NS,Central/South,0.011,1.150,2.405
+G662RT,Balmore Carron Valley,NS,Central/South,0.155,1.076,2.323
+G663PG,Balmore Carron Valley,NS,Central/South,0.319,1.126,2.406
+G664DH,Balmore,NS,Central/South,0.164,1.128,2.394
+G665NN,Balmore,NS,Central/South,0.279,1.127,2.377
+G665QS,Balmore,NS,Central/South,0.112,1.117,2.385
+G668JA,Balmore,NS,Central/South,0.685,1.126,2.368
+G668JX,Balmore,NS,Central/South,0.342,1.123,2.383
+G689GG,Balmore Carron Valley,NS,Central/South,0.005,1.114,2.391
+G696QH,Balmore,NS,Central/South,0.027,1.123,2.371
+G697BE,Balmore,NS,Central/South,0.477,1.106,2.368
+G697NA,Balmore,NS,Central/South,0.257,1.177,2.460
+G744JZ,Daer,NS,Central/South,9.162,1.163,2.455
+G758GU,Daer,NS,Central/South,0.035,1.161,2.402
+G759FJ,Daer,NS,Central/South,0.250,1.123,2.381
+G847AP,Blairlinnans,NS,Central/South,1.825,1.106,2.367
+KA290EJ,Greenock,NS,Central/South,25.280,1.136,2.278
+KA308TD,Greenock,NS,Central/South,0.051,1.151,2.406
+KA32TP,Amlaird Milngavie Gorbals Zone,NS,Central/South,0.107,1.125,2.414
+DG109DP,Moffat,NT,Central/South,0.118,1.140,2.406
+DG109HD,Moffat,NT,Central/South,-0.051,1.123,2.362
+DG109JJ,Moffat,NT,Central/South,0.261,1.168,2.443
+DG109JX,Moffat,NT,Central/South,0.970,1.123,2.410
+EH104JS,Glencorse,NT,Central/South,1.291,1.165,2.455
 EH105BN,Glencorse,NT,Central/South,0.428,1.131,2.412
-EH105EZ,Glencorse,NT,Central/South,1.05,1.176,2.46
+EH105EZ,Glencorse,NT,Central/South,1.049,1.168,2.463
 EH105HA,Glencorse,NT,Central/South,0.184,1.076,2.348
 EH105QT,Glencorse,NT,Central/South,1.438,1.133,2.376
 EH105RA,Glencorse,NT,Central/South,2.086,1.174,2.083
-EH11 1QR,Glencorse,NT,Central/South,0.265,1.126,2.41
+EH106EY,Rosebery,NT,Central/South,1.566,1.147,2.436
+EH11 1QR,Glencorse,NT,Central/South,0.372,1.121,2.404
 EH112QP,Glencorse,NT,Central/South,0.285,1.155,2.444
 EH113UJ,Glencorse,NT,Central/South,0.303,1.144,2.418
 EH125QF,Glencorse,NT,Central/South,0.511,1.134,2.408
-EH126AQ,Glencorse,NT,Central/South,0.5,1.165,2.458
-EH151JT,Glencorse,NT,Central/South,0,1.085,2.373
+EH125TN,Glencorse,NT,Central/South,0.572,1.144,2.422
+EH126AQ,Glencorse,NT,Central/South,0.500,1.165,2.458
+EH128BZ,Glencorse,NT,Central/South,0.500,1.125,2.403
+EH139EW,Marchbank,NT,Central/South,0.178,1.074,2.340
+EH139LB,Roseberry,NT,Central/South,0.037,1.171,2.436
+EH143BY,Marchbank,NT,Central/South,0.096,1.152,2.404
+EH145AE,Marchbank,NT,Central/South,0.331,1.105,2.372
+EH145DZ,Marchbank,NT,Central/South,0.172,1.146,2.409
+EH147EZ,Marchbank,NT,Central/South,0.259,1.061,2.317
+EH151JT,Glencorse,NT,Central/South,0.000,1.085,2.373
 EH166PE,Glencorse,NT,Central/South,0.348,1.094,2.373
 EH178HU,Glencorse,NT,Central/South,0.076,1.132,2.405
-EH209JE,Glencorse,NT,Central/South,0.3,1.168,2.441
+EH181DA,Roseberry,NT,Central/South,0.016,1.156,2.339
+EH209JE,Glencorse,NT,Central/South,0.300,1.168,2.441
 EH209JH,Glencorse,NT,Central/South,0.254,1.079,2.342
+EH217TJ,Rosebery,NT,Central/South,0.089,1.118,2.387
+EH218DQ,Roseberry,NT,Central/South,1.931,1.139,2.408
+EH218DY,Rosebery,NT,Central/South,0.529,1.097,2.381
+EH260LJ,Roseberry,NT,Central/South,0.013,1.147,2.390
+EH268JU,Roseberry,NT,Central/South,0.002,1.159,2.394
+EH269HT,Roseberry,NT,Central/South,0.147,1.135,2.388
+EH3 9JB,Glencorse,NT,Central/South,0.677,1.135,2.404
+EH320PP,Rosebery Castle Moffat,NT,Central/South,0.050,1.180,2.427
+EH320RU,Castle Moffat,NT,Central/South,0.636,1.107,2.385
+EH320ST,Rosebery Castle Moffat,NT,Central/South,0.053,1.161,2.401
+EH329AT,Rosebery Castle Moffat,NT,Central/South,0.274,1.106,1.365
+EH329DJ,Rosebery Castle Moffat,NT,Central/South,3.179,1.099,2.380
+EH332DB,Castle Moffat,NT,Central/South,0.822,1.154,2.277
+EH332EN,Castle Moffat,NT,Central/South,0.004,1.142,2.383
+EH345EJ,Hopes,NT,Central/South,0.730,1.080,2.362
+EH355LJ,Rosebery Hopes,NT,Central/South,0.481,1.124,2.396
+EH355LX,Rosebery Hopes,NT,Central/South,0.033,1.159,2.420
+EH36LL,Glencorse ,NT,Central/South,0.567,1.129,2.404
+EH413BE,Castle Moffat,NT,Central/South,0.051,1.144,2.396
+EH414AE,Castle Moffat,NT,Central/South,0.528,1.104,2.364
 EH41QD,Glencorse,NT,Central/South,0.069,1.152,2.419
-EH42AN,Glencorse,NT,Central/South,2.222,1.128,2.395
-EH42AN,Glencorse,NT,Central/South,2.171,1.125,2.393
-EH42AN,Glencorse,NT,Central/South,2.154,1.127,2.411
-EH42HA,Glencorse,NT,Central/South,0.158,1.135,2.415
-EH42HA,Glencorse,NT,Central/South,0.19,1.129,2.405
-EH42HA,Glencorse,NT,Central/South,0.159,1.111,2.367
+EH421GN,Castle Moffat,NT,Central/South,0.182,1.091,2.360
+EH42AN,Glencorse,NT,Central/South,2.182,1.125,2.406
+EH42HA,Glencorse,NT,Central/South,0.169,1.125,2.304
 EH43JZ,Glencorse,NT,Central/South,2.701,1.084,2.351
-EH43PX,Glencorse,NT,Central/South,3.619,1.101,2.385
-EH47DJ,Glencorse,NT,Central/South,0.411,1.113,2.4
-EH53BY,Glencorse,NT,Central/South,0.13,1.111,2.373
-EH53BY,Glencorse,NT,Central/South,0.088,1.145,2.418
+EH43PX,Glencorse,NT,Central/South,3.514,1.101,2.378
+EH459NA,Bonnycraig,NT,Central/South,-0.039,1.111,2.330
+EH459NB,Bonnycraig,NT,Central/South,0.298,1.103,2.375
+EH459ND,Bonnycraig,NT,Central/South,0.281,1.102,2.367
+EH47DJ,Glencorse,NT,Central/South,0.383,1.125,2.417
+EH51NA,Marchbank,NT,Central/South,0.345,1.109,2.396
+EH53BY,Glencorse,NT,Central/South,0.091,1.129,2.394
 EH53NJ,Glencorse,NT,Central/South,0.227,1.072,2.343
+EH546JT,Marchbank,NT,Central/South,1.090,1.153,2.438
+EH64QF,Marchbank,NT,Central/South,0.426,1.132,2.403
 EH67PL,Glencorse,NT,Central/South,0.839,1.166,2.464
 EH74AX,Glencorse,NT,Central/South,0.073,1.123,2.396
 EH76JG,Glencorse,NT,Central/South,0.336,1.098,2.353
 EH93EP,Glencorse,NT,Central/South,0.037,1.135,2.407
-EH345EJ,Hopes,NT,Central/South,0.73,1.08,2.362
-EH139EW,Marchbank,NT,Central/South,0.178,1.074,2.34
-EH143BY,Marchbank,NT,Central/South,0.096,1.152,2.404
-EH145DZ,Marchbank,NT,Central/South,0.172,1.146,2.409
-EH147EZ,Marchbank,NT,Central/South,0.259,1.061,2.317
-EH51NA,Marchbank,NT,Central/South,0.345,1.109,2.396
-EH546JT,Marchbank,NT,Central/South,1.09,1.153,2.438
-DG109DP,Moffat,NT,Central/South,0.057,1.156,2.441
-DG109HD,Moffat,NT,Central/South,-0.051,1.123,2.362
-DG109JJ,Moffat,NT,Central/South,0.261,1.168,2.443
-DG109JX,Moffat,NT,Central/South,1.022,1.121,2.407
-DG109JX,Moffat,NT,Central/South,0.951,1.125,2.413
-DG109JX,Moffat,NT,Central/South,0.935,1.122,2.409
 TD113BA,Rawburn,NT,Central/South,0.197,1.083,2.315
-TD113NN,Rawburn,NT,Central/South,0.101,1.081,2.362
-TD113NN,Rawburn,NT,Central/South,0.107,1.078,2.418
-TD113NN,Rawburn,NT,Central/South,0.1,1.095,2.377
+TD113NN,Rawburn,NT,Central/South,0.102,1.085,2.386
 TD145EY,Rawburn,NT,Central/South,1.287,1.153,2.423
-EH139LB,Roseberry,NT,Central/South,0.037,1.171,2.436
-EH181DA,Roseberry,NT,Central/South,0.016,1.156,2.339
-EH218DQ,Roseberry,NT,Central/South,1.931,1.139,2.408
-EH260LJ,Roseberry,NT,Central/South,0.013,1.147,2.39
-EH268JU,Roseberry,NT,Central/South,0.002,1.159,2.394
-EH269HT,Roseberry,NT,Central/South,0.147,1.135,2.388
-EH106EY,Rosebery,NT,Central/South,1.566,1.147,2.436
-EH218DY,Rosebery,NT,Central/South,0.529,1.097,2.381
-EH320PP,Rosebery Castle Moffat,NT,Central/South,0.05,1.18,2.427
-EH320ST,Rosebery Castle Moffat,NT,Central/South,0.053,1.161,2.401
-EH329DJ,Rosebery Castle Moffat,NT,Central/South,3.135,1.099,2.373
-EH329DJ,Rosebery Castle Moffat,NT,Central/South,3.222,1.101,2.363
-EH355LX,Rosebery Hopes,NT,Central/South,0.033,1.159,2.42
-DG90BG,Auchneel,NX,Central/South,0.139,1.114,2.393
-DG97DR,Auchneel,NX,Central/South,0.456,1.152,2.431
-DG97PQ,Auchneel,NX,Central/South,-0.052,1.157,2.414
-DG97QJ,Auchneel,NX,Central/South,2.032,1.126,2.409
-DG97RZ,Auchneel,NX,Central/South,0.982,1.165,2.45
-DG98BD,Auchneel,NX,Central/South,0.282,1.104,2.381
-DG98DX,Auchneel,NX,Central/South,0.178,1.115,2.373
-KA74UH,Bradan,NX,Central/South,0.033,1.129,2.382
-KA89RH,Bradan,NX,Central/South,-0.042,1.113,2.365
-KA106XE,Bradan Milngavie Gorbals Zone,NX,Central/South,0.038,1.123,2.393
-KA129DN,Bradan Milngavie Gorbals Zone,NX,Central/South,0.03,1.092,2.33
-DG71TA,Glengap,NX,Central/South,0.134,1.101,2.375
-DG72JB,Glengap,NX,Central/South,2.509,1.166,2.457
-DG72JB,Glengap,NX,Central/South,2.624,1.159,2.394
+DG11BT,Terregles,NX,Central/South,0.838,1.173,2.450
 DG11SW,Kettleton,NX,Central/South,0.181,1.126,2.939
-DG11TE,Kettleton,NX,Central/South,0.14,1.12,2.409
-DG11TE,Kettleton,NX,Central/South,0.208,1.122,2.402
-DG11TE,Kettleton,NX,Central/South,0.149,1.09,2.355
-DG11TE,Kettleton,NX,Central/South,0.149,1.091,2.365
-DG11TE,Kettleton,NX,Central/South,0.149,1.1,2.364
-DG11TE,Kettleton,NX,Central/South,0.132,1.107,2.366
-DG14LP,Kettleton,NX,Central/South,0.835,1.144,2.426
-DG14RA,Kettleton,NX,Central/South,0.234,1.138,2.425
-DG14RA,Kettleton,NX,Central/South,0.244,1.13,2.396
+DG11TE,Kettleton,NX,Central/South,0.155,1.105,2.333
+DG13BP,Terregles,NX,Central/South,4.343,1.143,2.434
+DG13EJ,Terregles,NX,Central/South,0.329,1.142,2.424
+DG13HQ,Larchfield,NX,Central/South,0.426,1.138,2.429
+DG14EA,Larchfield,NX,Central/South,0.833,1.144,2.424
+DG14EE,Larchfield,NX,Central/South,0.394,1.127,2.399
+DG14EE,Larchfield,NX,Central/South,0.394,1.127,2.399
+DG14LP,Kettleton,NX,Central/South,0.851,1.140,2.411
+DG14PA,Larchfield,NX,Central/South,0.274,1.136,2.404
+DG14RA,Kettleton,NX,Central/South,0.239,1.134,2.411
+DG20JN,Killylour,NX,Central/South,0.034,1.138,2.409
 DG20RU,Kettleton,NX,Central/South,0.569,1.143,2.423
 DG20RU,Kettleton,NX,Central/South,0.569,1.143,2.423
-DG34HT,Kettleton,NX,Central/South,0.268,1.13,2.395
-DG34HT,Kettleton,NX,Central/South,0.268,1.13,2.395
-DG35HJ,Kettleton,NX,Central/South,0.522,1.151,2.426
-DG35HZ,Kettleton,NX,Central/South,0.226,1.129,2.411
-DG20JN,Killylour,NX,Central/South,-0.012,1.143,2.42
-DG20JN,Killylour,NX,Central/South,0.055,1.132,2.413
-DG20JN,Killylour,NX,Central/South,0.058,1.138,2.393
+DG29HG,Terregles,NX,Central/South,-0.032,1.142,2.363
 DG29SJ,Killylour,NX,Central/South,0.013,1.103,2.327
 DG29SQ,Killylour,NX,Central/South,-0.028,1.117,2.338
 DG29TX,Killylour,NX,Central/South,-0.025,1.142,2.361
+DG34HT,Kettleton,NX,Central/South,0.268,1.130,2.395
+DG34HT,Kettleton,NX,Central/South,0.268,1.130,2.395
+DG35HJ,Kettleton,NX,Central/South,0.522,1.151,2.426
+DG35HZ,Kettleton,NX,Central/South,0.226,1.129,2.411
 DG54QS,Killylour,NX,Central/South,0.113,1.097,2.332
 DG54QW,Killylour,NX,Central/South,0.428,1.139,2.408
+DG64DR,Ringford & Glengap,NX,Central/South,0.399,1.142,2.414
+DG64EH,Ringford & Glengap,NX,Central/South,0.346,1.147,2.419
+DG64EW,Ringford & Glengap,NX,Central/South,0.820,1.149,2.423
+DG64LE,Ringford & Glengap,NX,Central/South,0.864,1.153,2.423
+DG71DQ,Lochinvar,NX,Central/South,0.540,1.141,2.426
+DG71TA,Glengap,NX,Central/South,0.134,1.101,2.375
+DG72JB,Glengap,NX,Central/South,2.567,1.166,2.457
 DG73HQ,Killylour,NX,Central/South,-0.009,1.101,2.375
-DG73LJ,Killylour,NX,Central/South,0.05,1.12,2.375
-DG13HQ,Larchfield,NX,Central/South,0.426,1.138,2.429
-DG14EA,Larchfield,NX,Central/South,0.786,1.145,2.424
-DG14EA,Larchfield,NX,Central/South,0.881,1.142,2.424
-DG14EE,Larchfield,NX,Central/South,0.394,1.127,2.399
-DG14EE,Larchfield,NX,Central/South,0.394,1.127,2.399
-DG14PA,Larchfield,NX,Central/South,0.275,1.127,2.395
-DG14PA,Larchfield,NX,Central/South,0.273,1.144,2.412
-DG71DQ,Lochinvar,NX,Central/South,0.54,1.141,2.426
-KA269HG,Penwhapple,NX,Central/South,0.408,1.157,2.42
+DG73LJ,Killylour,NX,Central/South,0.050,1.120,2.375
 DG86BP,Penwhirn,NX,Central/South,0.703,1.135,2.406
 DG86EF,Penwhirn,NX,Central/South,1.012,1.122,2.402
 DG86ES,Penwhirn,NX,Central/South,0.438,1.115,2.385
 DG86JZ,Penwhirn,NX,Central/South,0.044,1.118,2.348
 DG86UA,Penwhirn,NX,Central/South,0.038,1.107,2.373
-DG87AL,Penwhirn,NX,Central/South,0.201,1.132,2.387
-DG87AL,Penwhirn,NX,Central/South,0.268,1.128,2.422
-DG87BD,Penwhirn,NX,Central/South,0.012,1.102,2.366
-DG87BD,Penwhirn,NX,Central/South,0.013,1.086,2.35
-DG87BD,Penwhirn,NX,Central/South,0.005,1.137,2.4
-DG87DA,Penwhirn,NX,Central/South,5.162,1.15,2.434
+DG87AL,Penwhirn,NX,Central/South,0.234,1.130,2.405
+DG87BD,Penwhirn,NX,Central/South,0.010,1.108,2.372
+DG87DA,Penwhirn,NX,Central/South,5.162,1.150,2.434
 DG88LG,Penwhirn,NX,Central/South,0.141,1.126,2.399
 DG88LH,Penwhirn,NX,Central/South,0.039,1.116,2.375
-DG89AB,Penwhirn,NX,Central/South,0.106,1.145,2.43
+DG89AB,Penwhirn,NX,Central/South,0.106,1.145,2.430
 DG89JG,Penwhirn,NX,Central/South,0.159,1.115,2.375
 DG89RD,Penwhirn,NX,Central/South,0.101,1.159,2.422
+DG90BG,Auchneel,NX,Central/South,0.139,1.114,2.393
+DG97DR,Auchneel,NX,Central/South,0.456,1.152,2.431
+DG97PA,Auchneel,NX,Central/South,0.163,1.063,2.341
+DG97PQ,Auchneel,NX,Central/South,-0.052,1.157,2.414
+DG97QJ,Auchneel,NX,Central/South,2.153,1.119,2.400
+DG97RZ,Auchneel,NX,Central/South,0.982,1.165,2.450
 DG97SE,Penwhirn,NX,Central/South,0.074,1.156,2.419
 DG97SF,Penwhirn,NX,Central/South,0.129,1.087,2.327
+DG98BD,Auchneel,NX,Central/South,0.282,1.104,2.381
+DG98DX,Auchneel,NX,Central/South,0.178,1.115,2.373
 DG98HU,Penwhirn,NX,Central/South,0.021,1.145,2.418
-DG98SA,Penwhirn,NX,Central/South,0.003,1.16,2.437
-DG99AP,Penwhirn,NX,Central/South,0.017,1.12,2.39
-DG99AP,Penwhirn,NX,Central/South,0.088,1.102,2.365
+DG98SA,Penwhirn,NX,Central/South,0.003,1.160,2.437
+DG99AP,Penwhirn,NX,Central/South,0.052,1.111,2.378
 DG99BP,Penwhirn,NX,Central/South,0.036,1.145,2.388
 DG99JH,Penwhirn,NX,Central/South,0.102,1.087,2.328
 DG99QN,Penwhirn,NX,Central/South,0.591,1.148,2.427
-DG64DR,Ringford & Glengap,NX,Central/South,0.399,1.142,2.414
-DG64EH,Ringford & Glengap,NX,Central/South,0.346,1.147,2.419
-DG64EW,Ringford & Glengap,NX,Central/South,0.84,1.147,2.428
-DG64LE,Ringford & Glengap,NX,Central/South,0.879,1.156,2.43
-DG11BT,Terregles,NX,Central/South,0.838,1.173,2.45
-DG13BP,Terregles,NX,Central/South,4.297,1.14,2.433
-DG13BP,Terregles,NX,Central/South,4.388,1.145,2.435
-DG13EJ,Terregles,NX,Central/South,0.329,1.142,2.424
-DG29HG,Terregles,NX,Central/South,-0.065,1.135,2.374
-DG29HG,Terregles,NX,Central/South,0.001,1.148,2.352
+KA106XE,Bradan Milngavie Gorbals Zone,NX,Central/South,0.038,1.123,2.393
+KA129DN,Bradan Milngavie Gorbals Zone,NX,Central/South,0.030,1.092,2.330
+KA13 6UD,Bradan Milngavie Gorbals Zone,NX,Central/South,0.029,1.096,2.349
+KA137LH,Bradan Milngavie Gorbals Zone,NX,Central/South,0.130,1.122,2.378
+KA269EY,Penwhapple,NX,Central/South,0.209,1.079,2.344
+KA269HG,Penwhapple,NX,Central/South,0.408,1.157,2.420
+KA74UH,Bradan,NX,Central/South,0.033,1.129,2.382
+KA80PX,Bradan,NX,Central/South,1.603,1.139,2.416
+KA89RH,Bradan,NX,Central/South,-0.042,1.113,2.365
 DG111NF,Black Esk,NY,Central/South,0.201,1.155,2.437
 DG111NF,Black Esk,NY,Central/South,0.201,1.155,2.437
-DG126HB,Black Esk,NY,Central/South,0.411,1.158,2.43
-DG126HB,Black Esk,NY,Central/South,0.411,1.158,2.43
-DG13RZ,Black Esk,NY,Central/South,0.112,1.147,2.483
-DG13RZ,Black Esk,NY,Central/South,0.034,1.139,2.346
-DG13RZ,Black Esk,NY,Central/South,0.036,1.09,2.311
-DG13RZ,Black Esk,NY,Central/South,0.02,1.11,2.347
+DG126HB,Black Esk,NY,Central/South,0.411,1.158,2.430
+DG126HB,Black Esk,NY,Central/South,0.411,1.158,2.430
+DG13RZ,Black Esk,NY,Central/South,0.050,1.122,2.300
 DG13SQ,Black Esk,NY,Central/South,0.178,1.144,2.416
 DG13SQ,Black Esk,NY,Central/South,0.178,1.144,2.416
+DG165HX,Black Esk Winterhope,NY,Central/South,0.066,1.130,2.382
+DG165HX,Black Esk Winterhope,NY,Central/South,0.066,1.130,2.382
 DG165HY,Black Esk,NY,Central/South,0.274,1.155,2.434
 DG165HY,Black Esk,NY,Central/South,0.274,1.155,2.434
+DG165JW,Black Esk Winterhope,NY,Central/South,0.045,1.094,2.375
+DG165UP,Black Esk Winterhope,NY,Central/South,0.365,1.149,2.386
+DG165UP,Black Esk Winterhope,NY,Central/South,0.365,1.149,2.386
 DG165HX,Black Esk Winterhope,NY,Central/South,0.066,1.13,2.382
 DG165HX,Black Esk Winterhope,NY,Central/South,0.066,1.13,2.382
 DG165JW,Black Esk Winterhope,NY,Central/South,0.045,1.094,2.375
