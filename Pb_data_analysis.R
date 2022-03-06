@@ -93,7 +93,9 @@ Leg_cutoffs <- Pb_data %>% select(Legislative_cutoffs)
 list(Leg_cutoffs)
 
 (Pb_legcutoff_plot <- ggplot(Pb_data, aes (x = Pb206_207 , y = Pb208_207, colour = Legislative_cutoffs)) +
-    geom_point(size = 4) +                                               # Changing point size              # Adding linear model fit
+    geom_point(size = 4) +  # Changing point size 
+    xlim(1.05,1.18) +
+    ylim(2,2.75) +
     theme_ps() + 
     ylab("Pb206/Pb207\n") +                             
     xlab("\nPb208/Pb207") +
