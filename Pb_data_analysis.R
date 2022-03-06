@@ -105,3 +105,53 @@ list(Leg_cutoffs)
 plot_save(Pb_legcutoff_plot, file_name = "Plots/Mixing plot grouped by legaslative cutoffs", width = 13, 
           height = 8, dpi = 150) 
 
+#### GLM----
+(hist_Total_Pb<- ggplot(Pb_data, aes(x = Total_Pb)) + 
+   geom_histogram(aes(y = ..count..), binwidth = 0.7,
+                  colour = "honeydew4", fill = "peru") +
+     scale_y_log10() +
+     scale_x_log10() +
+   #theme_ps() +
+   labs(x = "\nTotal pb(in ug L -1)", 
+        y = "Frequency\n") # edit axis labels 
+)
+
+plot_save(hist_Total_Pb, file_name = "Plots/Histogram of Total Pb", width = 13, 
+          height = 8, dpi = 150)
+
+(hist_Pb206_207<- ggplot(Pb_data, aes(x = Pb206_207)) + 
+    geom_histogram(aes(y = ..count..), binwidth = 0.01,
+                   colour = "honeydew4", fill = "peru") +
+    scale_y_log10() +
+    scale_x_log10() +
+    #theme_ps() +
+    labs(x = "\nPb206/Pb207", 
+         y = "Frequency\n") # edit axis labels 
+)
+
+plot_save(hist_Total_Pb, file_name = "Plots/Histogram of Pb206/Pb207", width = 13, 
+          height = 8, dpi = 150)
+
+(hist_Pb208_207<- ggplot(Pb_data, aes(x = Pb208_207)) + 
+    geom_histogram(aes(y = ..count..), binwidth = 0.01,
+                   colour = "honeydew4", fill = "peru") +
+    scale_y_log10() +
+    scale_x_log10() +
+    #theme_ps() +
+    labs(x = "\nPb208/Pb207", 
+         y = "Frequency\n") # edit axis labels 
+)
+
+plot_save(hist_Total_Pb, file_name = "Plots/Histogram of Pb208/Pb207", width = 13, 
+          height = 8, dpi = 150)
+
+
+
+
+Total_Pb_lm <- lm(Total_Pb ~ OS_grid_region, data = Pb_data) # Construct ANOVA
+anova(Total_Pb_lm)
+summary(Total_Pb_lm)
+
+
+Total_Pb_glm <- glm(Total_Pb ~ OS_grid_region, data= Pb_data, family= 
+summary()
