@@ -76,7 +76,7 @@ plot_save(Pb_OS_plot, file_name = "Plots/Mixing plot grouped by OS grid", width 
     xlab("\nPb208/Pb207") +
     theme(legend.position = "right")
 )
-plot_save(Pb_resevoir_plot, file_name = "Plots/Mixing plot grouped by OS region", width = 13, 
+plot_save(Pb_OS_NS, file_name = "Plots/Mixing plot grouped by OS region", width = 13, 
           height = 8, dpi = 150) 
 
 #### Total Pb----
