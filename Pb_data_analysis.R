@@ -70,7 +70,9 @@ plot_save(Pb_OS_plot, file_name = "Plots/Mixing plot grouped by OS grid", width 
           height = 8, dpi = 150) 
 
 (Pb_OS_NS <- ggplot(Pb_data, aes (x = Pb206_207 , y = Pb208_207, colour = OS_grouping)) +
-    geom_point(size = 4) +                                               # Changing point size              # Adding linear model fit
+    geom_point(size = 4) +   # Changing point size     
+    xlim(1.1,1.18) +
+    ylim(2,2.75) +
     theme_ps() + 
     ylab("Pb206/Pb207\n") +                             
     xlab("\nPb208/Pb207") +
