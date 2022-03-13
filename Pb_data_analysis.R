@@ -84,6 +84,7 @@ plot_save(Pb_OS_NS, file_name = "Plots/Mixing plot grouped by OS region", width 
 #### Total Pb----
 levels(Pb_data$Total_Pb)<- c("<1","1-5",">5")
 Pb_data <- Pb_data %>% 
+           mutate() %>%
            group_by(Legislative_cutoffs =
                   case_when(
                   Total_Pb <1 ~ "<1",
@@ -107,6 +108,12 @@ list(Leg_cutoffs)
 plot_save(Pb_legcutoff_plot, file_name = "Plots/Mixing plot grouped by legaslative cutoffs", width = 13, 
           height = 8, dpi = 150) 
 
+(Pb_lto_plot<- ggplot(Pb_data, aes(x= Pb206_207 , y = Pb208_207,
+                                   colour= Legislative_cutoffs$"<1")))
+
+view(Pb_lto_plot)
+
+
 #### GLM----
 (hist_Total_Pb<- ggplot(Pb_data, aes(x = Total_Pb)) + 
    geom_histogram(aes(y = ..count..), binwidth = 0.7,
@@ -114,9 +121,10 @@ plot_save(Pb_legcutoff_plot, file_name = "Plots/Mixing plot grouped by legaslati
      scale_y_log10() +
      scale_x_log10() +
    #theme_ps() +
-   labs(x = "\nTotal pb(in ug L -1)", 
-        y = "Frequency\n") # edit axis labels 
+   labs(x = "\nTotal pb(in ug L -1)", # edit axis labels 
+        y = "Frequency\n")
 )
+
 
 plot_save(hist_Total_Pb, file_name = "Plots/Histogram of Total Pb", width = 13, 
           height = 8, dpi = 150)
@@ -147,13 +155,3 @@ plot_save(hist_Total_Pb, file_name = "Plots/Histogram of Pb206/Pb207", width = 1
 plot_save(hist_Total_Pb, file_name = "Plots/Histogram of Pb208/Pb207", width = 13, 
           height = 8, dpi = 150)
 
-
-
-
-Total_Pb_lm <- lm(Total_Pb ~ OS_grid_region, data = Pb_data) # Construct ANOVA
-anova(Total_Pb_lm)
-summary(Total_Pb_lm)
-
-
-Total_Pb_glm <- glm(Total_Pb ~ OS_grid_region, data= Pb_data, family= 
-summary()
