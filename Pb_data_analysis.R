@@ -84,13 +84,38 @@ plot_save(Pb_OS_NS, file_name = "Plots/Mixing plot grouped by OS region", width 
 #### Total Pb----
 levels(Pb_data$Total_Pb)<- c("<1","1-5",">5")
 Pb_data <- Pb_data %>% 
-           mutate() %>%
            group_by(Legislative_cutoffs =
                   case_when(
                   Total_Pb <1 ~ "<1",
                   Total_Pb >=1 & Total_Pb <=5 ~ "1-5",
                   Total_Pb >5 ~ ">5"
                   ))
+
+Pb_data <- Pb_data %>% 
+  filter(Pb_data$Legislative_cutoffs =
+          case_when(
+             Total_Pb <1 ~ "<1",
+             Total_Pb >=1 & Total_Pb <=5 ~ "1-5",
+             Total_Pb >5 ~ ">5"
+           ))
+         
+Pb_data <- Pb_data %>% mutate(Less_one =
+                              case_when(
+                                 Total_Pb <1 ~ "1")) %>%
+                       mutate(One_to_five =
+                             case_when(
+                               Total_Pb >=1 & Total_Pb <=5 ~ "1-5") %>%
+                               mutate(Greater_five =
+                                        case_when(
+                                          Total_Pb >5 ~ ">5")))
+
+                              
+                              
+                              
+                              
+                             
+
+
 
 Leg_cutoffs <- Pb_data %>% select(Legislative_cutoffs)    
 list(Leg_cutoffs)
@@ -108,7 +133,7 @@ list(Leg_cutoffs)
 plot_save(Pb_legcutoff_plot, file_name = "Plots/Mixing plot grouped by legaslative cutoffs", width = 13, 
           height = 8, dpi = 150) 
 
-(Pb_lto_plot<- ggplot(Pb_data, aes(x= Pb206_207 , y = Pb208_207,
+(Pb_lto_plot<- ggplot(Legislative_cutoffs, aes(x= Pb206_207 , y = Pb208_207,
                                    colour= Legislative_cutoffs$"<1")))
 
 view(Pb_lto_plot)
