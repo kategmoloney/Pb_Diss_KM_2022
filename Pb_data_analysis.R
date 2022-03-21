@@ -60,8 +60,9 @@ plot_save(Pb_resevoir_plot, file_name = "Plots/Mixing plot grouped by supply res
 
 #### OS Region----
 (Pb_OS_plot <- ggplot(Pb_data, aes (x = Pb206_207 , y = Pb208_207, colour = OS_grid_region)) +
-    geom_point(size = 4) +                                               # Changing point size              # Adding linear model fit
-    theme_ps() + 
+    geom_point(size = 4) +                                               # Changing point size         
+    xlim(1.05,1.18) +
+    ylim(2.0, 2.75)+
     ylab("Pb206/Pb207\n") +                             
     xlab("\nPb208/Pb207") +
     theme(legend.position = "right")
@@ -82,43 +83,18 @@ plot_save(Pb_OS_NS, file_name = "Plots/Mixing plot grouped by OS region", width 
           height = 8, dpi = 150) 
 
 #### Total Pb----
-levels(Pb_data$Total_Pb)<- c("<1","1-5",">5")
+
 Pb_data <- Pb_data %>% 
            group_by(Legislative_cutoffs =
                   case_when(
                   Total_Pb <1 ~ "<1",
                   Total_Pb >=1 & Total_Pb <=5 ~ "1-5",
-                  Total_Pb >5 ~ ">5"
+                  Total_Pb >5 & Total_Pb <10 ~ "5-10", 
+                  Total_Pb >=10 ~ ">=10"
                   ))
-
-Pb_data <- Pb_data %>% 
-  filter(Pb_data$Legislative_cutoffs =
-          case_when(
-             Total_Pb <1 ~ "<1",
-             Total_Pb >=1 & Total_Pb <=5 ~ "1-5",
-             Total_Pb >5 ~ ">5"
-           ))
-         
-Pb_data <- Pb_data %>% mutate(Less_one =
-                              case_when(
-                                 Total_Pb <1 ~ "1")) %>%
-                       mutate(One_to_five =
-                             case_when(
-                               Total_Pb >=1 & Total_Pb <=5 ~ "1-5") %>%
-                               mutate(Greater_five =
-                                        case_when(
-                                          Total_Pb >5 ~ ">5")))
-
-                              
-                              
-                              
-                              
-                             
-
-
-
-Leg_cutoffs <- Pb_data %>% select(Legislative_cutoffs)    
-list(Leg_cutoffs)
+                 
+levels(Pb_data$Legislative_cutoffs)<- c("<1", "1-5", "5-10", ">=10")
+   
 
 (Pb_legcutoff_plot <- ggplot(Pb_data, aes (x = Pb206_207 , y = Pb208_207, colour = Legislative_cutoffs)) +
     geom_point(size = 4) +  # Changing point size 
@@ -130,11 +106,21 @@ list(Leg_cutoffs)
     theme(legend.position = "right")
 )
 
+
+
 plot_save(Pb_legcutoff_plot, file_name = "Plots/Mixing plot grouped by legaslative cutoffs", width = 13, 
           height = 8, dpi = 150) 
 
-(Pb_lto_plot<- ggplot(Legislative_cutoffs, aes(x= Pb206_207 , y = Pb208_207,
-                                   colour= Legislative_cutoffs$"<1")))
+(Pb_lto_plot<- ggplot(Pb_data, aes(x= Pb206_207 , y = Pb208_207,
+                                   colour= Legislative_cutoffs["<1"])) +
+                        geom_point(size = 4) +  # Changing point size 
+                       # xlim(1.05,1.18) +
+                       # ylim(2,2.75) +
+                        theme_ps() + 
+                        ylab("Pb206/Pb207\n") +                             
+                        xlab("\nPb208/Pb207") +
+                        theme(legend.position = "right")
+)
 
 view(Pb_lto_plot)
 
