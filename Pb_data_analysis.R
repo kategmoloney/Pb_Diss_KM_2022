@@ -46,11 +46,14 @@ plot_save <- function(plot_name, # first put the plot object name
 
 #### Reservoir----
 (Pb_resevoir_plot <- ggplot(Pb_data, aes (x = Pb206_207 , y = Pb208_207, colour = Supply_reservoir)) +
-    geom_point(size = 4) +                                               # Changing point size              # Adding linear model fit
+    geom_point(size = 2) +                                               # Changing point size              # Adding linear model fit
     theme_ps() + 
-    ylab("Pb206/Pb207\n") +                             
-    xlab("\nPb208/Pb207") +
-    theme(legend.position = "right")
+    xlab("Pb206/Pb207\n") +                             
+    ylab("\nPb208/Pb207") +
+   xlim(1.05,1.2) +
+   ylim(2.25, 2.57)+
+  theme(legend.position = "bottom") +
+   theme_ps()
 )
 
 
@@ -59,13 +62,16 @@ plot_save(Pb_resevoir_plot, file_name = "Plots/Mixing plot grouped by supply res
 
 
 #### OS Region----
-(Pb_OS_plot <- ggplot(Pb_data, aes (x = Pb206_207 , y = Pb208_207, colour = OS_grid_region)) +
-    geom_point(size = 4) +                                               # Changing point size         
+(Pb_OS_plot <- ggplot(Pb_data, aes (x = Pb206_207 , y = Pb208_207,
+                      colour = OS_grid_region,)) +
+    geom_point(size = 2) + # Changing point size         
     xlim(1.05,1.18) +
     ylim(2.0, 2.75)+
-    ylab("Pb206/Pb207\n") +                             
-    xlab("\nPb208/Pb207") +
-    theme(legend.position = "right")
+    xlab("Pb206/Pb207\n") +                             
+    ylab("\nPb208/Pb207") +
+    theme(legend.position = "right") +
+   labs(fill= "OS grid region")+
+    theme_ps()
 )
 plot_save(Pb_OS_plot, file_name = "Plots/Mixing plot grouped by OS grid", width = 13, 
           height = 8, dpi = 150) 
@@ -75,8 +81,8 @@ plot_save(Pb_OS_plot, file_name = "Plots/Mixing plot grouped by OS grid", width 
     xlim(1.1,1.18) +
     ylim(2,2.75) +
     theme_ps() + 
-    ylab("Pb206/Pb207\n") +                             
-    xlab("\nPb208/Pb207") +
+    xlab("Pb206/Pb207\n") +                             
+    ylab("\nPb208/Pb207") +
     theme(legend.position = "right")
 )
 plot_save(Pb_OS_NS, file_name = "Plots/Mixing plot grouped by OS region", width = 13, 
@@ -89,40 +95,61 @@ Pb_data <- Pb_data %>%
                   case_when(
                   Total_Pb <1 ~ "<1",
                   Total_Pb >=1 & Total_Pb <=5 ~ "1-5",
-                  Total_Pb >5 & Total_Pb <10 ~ "5-10", 
-                  Total_Pb >=10 ~ ">=10"
+                  Total_Pb >5 ~ ">5", 
                   ))
                  
-levels(Pb_data$Legislative_cutoffs)<- c("<1", "1-5", "5-10", ">=10")
+levels(Pb_data$Total_Pb)<- c("<1", "1-5", ">5")
    
 
 (Pb_legcutoff_plot <- ggplot(Pb_data, aes (x = Pb206_207 , y = Pb208_207, colour = Legislative_cutoffs)) +
-    geom_point(size = 4) +  # Changing point size 
+    geom_point(size = 2) +  # Changing point size 
     xlim(1.05,1.18) +
-    ylim(2,2.75) +
+    ylim(2,2.6) +
     theme_ps() + 
-    ylab("Pb206/Pb207\n") +                             
-    xlab("\nPb208/Pb207") +
+    xlab("Pb206/Pb207\n") +                             
+    ylab("\nPb208/Pb207")+
     theme(legend.position = "right")
 )
-
-
 
 plot_save(Pb_legcutoff_plot, file_name = "Plots/Mixing plot grouped by legaslative cutoffs", width = 13, 
           height = 8, dpi = 150) 
 
-(Pb_lto_plot<- ggplot(Pb_data, aes(x= Pb206_207 , y = Pb208_207,
-                                   colour= Legislative_cutoffs["<1"])) +
-                        geom_point(size = 4) +  # Changing point size 
+(Pb_less_one_plot<- ggplot(Pb_data, aes(x= Pb206_207 , y = Pb208_207,
+                                   colour= (case_when(
+                                     Total_Pb <1 ~ "<1")))) +
+                        geom_point(size = 2) + # Changing point size
                        # xlim(1.05,1.18) +
                        # ylim(2,2.75) +
                         theme_ps() + 
-                        ylab("Pb206/Pb207\n") +                             
-                        xlab("\nPb208/Pb207") +
-                        theme(legend.position = "right")
+                        xlab("Pb206/Pb207\n") +                             
+                        ylab("\nPb208/Pb207") +
+                        theme(legend.position = "bottom")
 )
 
-view(Pb_lto_plot)
+
+
+(Pb_one_five_plot<- ggplot(Pb_data, aes(x= Pb206_207 , y = Pb208_207,
+                                   colour= case_when(
+                                     Total_Pb >=1 & Total_Pb <=5 ~ "1-5"))) +
+    geom_point(size = 2) + # Changing point size
+    # xlim(1.05,1.18) +
+    # ylim(2,2.75) +
+    theme_ps() + 
+    xlab("Pb206/Pb207\n") +                             
+    ylab("\nPb208/Pb207") +
+    theme(legend.position = "bottom")
+)
+
+(Pb_greater_five_plot<- ggplot(Pb_data, aes(x= Pb206_207 , y = Pb208_207,
+                                        colour= case_when(Total_Pb >5 ~ ">5"))) +
+    geom_point(size = 2) + # Changing point size
+    # xlim(1.05,1.18) +
+    # ylim(2,2.75) +
+    theme_ps() + 
+    xlab("Pb206/Pb207\n") +                             
+    ylab("\nPb208/Pb207") +
+    theme(legend.position = "bottom")
+)
 
 
 #### GLM----
