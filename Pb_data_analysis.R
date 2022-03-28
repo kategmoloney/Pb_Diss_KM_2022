@@ -69,7 +69,7 @@ plot_save(Pb_resevoir_plot, file_name = "Plots/Mixing plot grouped by supply res
     ylim(2.0, 2.75)+
     xlab("Pb206/Pb207\n") +                             
     ylab("\nPb208/Pb207") +
-    theme(legend.position = "right") +
+    theme(legend.position = "left") +
    labs(fill= "OS grid region")+
     theme_ps()
 )
@@ -77,7 +77,7 @@ plot_save(Pb_OS_plot, file_name = "Plots/Mixing plot grouped by OS grid", width 
           height = 8, dpi = 150) 
 
 (Pb_OS_NS <- ggplot(Pb_data, aes (x = Pb206_207 , y = Pb208_207, colour = OS_grouping)) +
-    geom_point(size = 4) +   # Changing point size     
+    geom_point(size = 2) +   # Changing point size     
     xlim(1.1,1.18) +
     ylim(2,2.75) +
     theme_ps() + 
@@ -115,8 +115,7 @@ plot_save(Pb_legcutoff_plot, file_name = "Plots/Mixing plot grouped by legaslati
           height = 8, dpi = 150) 
 
 (Pb_less_one_plot<- ggplot(Pb_data, aes(x= Pb206_207 , y = Pb208_207,
-                                   colour= (case_when(
-                                     Total_Pb <1 ~ "<1")))) +
+                                   colour= filter(Legislative_cutoffs == ">1"))) +
                         geom_point(size = 2) + # Changing point size
                        # xlim(1.05,1.18) +
                        # ylim(2,2.75) +
@@ -141,7 +140,8 @@ plot_save(Pb_legcutoff_plot, file_name = "Plots/Mixing plot grouped by legaslati
 )
 
 (Pb_greater_five_plot<- ggplot(Pb_data, aes(x= Pb206_207 , y = Pb208_207,
-                                        colour= case_when(Total_Pb >5 ~ ">5"))) +
+                                        colour= case_when(Total_Pb >5 ~ ">5", 
+                                                          drop_na(Pb_data$Total_Pb)))) +
     geom_point(size = 2) + # Changing point size
     # xlim(1.05,1.18) +
     # ylim(2,2.75) +
