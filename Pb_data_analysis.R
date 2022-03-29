@@ -115,7 +115,7 @@ plot_save(Pb_legcutoff_plot, file_name = "Plots/Mixing plot grouped by legaslati
           height = 8, dpi = 150) 
 
 (Pb_less_one_plot<- ggplot(Pb_data, aes(x= Pb206_207 , y = Pb208_207,
-                                   colour= filter(Legislative_cutoffs == ">1"))) +
+                                   colour= case_when(Total_Pb >1 ~ ">1"))) +
                         geom_point(size = 2) + # Changing point size
                        # xlim(1.05,1.18) +
                        # ylim(2,2.75) +
@@ -140,8 +140,7 @@ plot_save(Pb_legcutoff_plot, file_name = "Plots/Mixing plot grouped by legaslati
 )
 
 (Pb_greater_five_plot<- ggplot(Pb_data, aes(x= Pb206_207 , y = Pb208_207,
-                                        colour= case_when(Total_Pb >5 ~ ">5", 
-                                                          drop_na(Pb_data$Total_Pb)))) +
+                                        colour= case_when(Total_Pb >5 ~ ">5"))) +
     geom_point(size = 2) + # Changing point size
     # xlim(1.05,1.18) +
     # ylim(2,2.75) +
