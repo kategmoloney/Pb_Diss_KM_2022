@@ -4,7 +4,10 @@
 
 getwd()
 library(dplyr)
-library(tidyverse) 
+remove.packages(c("tidyverse","ggplot2"))
+install.packages("tidyverse", dependencies = TRUE)
+install.packages("ggplot2", dependencies = TRUE)
+library(tidyverse)  
 library(ggplot2)
 library(tidyr) 
 install.packages("ggpubr")
