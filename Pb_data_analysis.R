@@ -2,6 +2,8 @@
 ## Kate Moloney
 ## Dissertation data analysis 2021/2022
 
+remotes::update_packages("rlang")
+
 getwd()
 library(dplyr)
 remove.packages(c("tidyverse","ggplot2"))
@@ -105,6 +107,7 @@ Pb_data <- Pb_data %>%
 
 
 
+
 levels(Pb_data$Total_Pb)<- c("<1", "1-5", ">5")
    
 
@@ -176,9 +179,9 @@ plot_save(Pb_one_five_plot, file_name = "Plots/Mixing plot of total Pb 1-5 group
 plot_save(Pb_greater_five_plot, file_name = "Plots/Mixing plot of total Pb >5 groupd by OS region", 
           width = 13, height = 8, dpi = 150) 
 
-Total_Pb_LC_groups_plots <- ggarrange(Pb_less_one_plot ,Pb_one_five_plot, Pb_greater_five_plot,
-                                      labels= C("Total Pb <1 μg L-1", "Total Pb 1-5 μg L-1",
-                                                "Total Pb >5 μg L-1"))
+(Total_Pb_LC_groups_plots <- ggarrange(Pb_less_one_plot ,Pb_one_five_plot, Pb_greater_five_plot,
+                                      labels= c("Total Pb <1 μg L-1", "Total Pb 1-5 μg L-1",
+                                                "Total Pb >5 μg L-1")))
 
 #### GLM----
 (hist_Total_Pb<- ggplot(Pb_data, aes(x = Total_Pb)) + 
