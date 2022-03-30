@@ -97,7 +97,9 @@ Pb_data <- Pb_data %>%
                   Total_Pb >=1 & Total_Pb <=5 ~ "1-5",
                   Total_Pb >5 ~ ">5", 
                   ))
-                 
+
+
+
 levels(Pb_data$Total_Pb)<- c("<1", "1-5", ">5")
    
 
@@ -114,8 +116,17 @@ levels(Pb_data$Total_Pb)<- c("<1", "1-5", ">5")
 plot_save(Pb_legcutoff_plot, file_name = "Plots/Mixing plot grouped by legaslative cutoffs", width = 13, 
           height = 8, dpi = 150) 
 
-(Pb_less_one_plot<- ggplot(Pb_data, aes(x= Pb206_207 , y = Pb208_207,
-                                   colour= case_when(Total_Pb >1 ~ ">1"))) +
+
+
+##### Legislative cutoff plots---- 
+
+Pb_less_one <- subset(Pb_data, Total_Pb <1)   # Subsetting data into Total Pb <1
+Pb_one_five <- subset(Pb_data, Total_Pb >=1 & Total_Pb <=5 ) # Subsetting data into Total Pb 1-5
+Pb_greater_five <- subset(Pb_data, Total_Pb >5)  # Subsetting data into Total Pb >5
+
+
+(Pb_less_one_plot<- ggplot(Pb_less_one, aes(x= Pb206_207 , y = Pb208_207,
+                                   colour= OS_grid_region)) +
                         geom_point(size = 2) + # Changing point size
                        # xlim(1.05,1.18) +
                        # ylim(2,2.75) +
@@ -125,11 +136,12 @@ plot_save(Pb_legcutoff_plot, file_name = "Plots/Mixing plot grouped by legaslati
                         theme(legend.position = "bottom")
 )
 
+plot_save(Pb_less_one_plot, file_name = "Plots/Mixing plot of total Pb <1 groupd by OS region", 
+width = 13, height = 8, dpi = 150) 
 
 
-(Pb_one_five_plot<- ggplot(Pb_data, aes(x= Pb206_207 , y = Pb208_207,
-                                   colour= case_when(
-                                     Total_Pb >=1 & Total_Pb <=5 ~ "1-5"))) +
+(Pb_one_five_plot<- ggplot(Pb_one_five, aes(x= Pb206_207 , y = Pb208_207,
+                                   colour= OS_grid_region)) +
     geom_point(size = 2) + # Changing point size
     # xlim(1.05,1.18) +
     # ylim(2,2.75) +
@@ -139,8 +151,11 @@ plot_save(Pb_legcutoff_plot, file_name = "Plots/Mixing plot grouped by legaslati
     theme(legend.position = "bottom")
 )
 
-(Pb_greater_five_plot<- ggplot(Pb_data, aes(x= Pb206_207 , y = Pb208_207,
-                                        colour= case_when(Total_Pb >5 ~ ">5"))) +
+plot_save(Pb_one_five_plot, file_name = "Plots/Mixing plot of total Pb 1-5 groupd by OS region", 
+          width = 13, height = 8, dpi = 150) 
+
+(Pb_greater_five_plot<- ggplot(Pb_greater_five, aes(x= Pb206_207 , y = Pb208_207,
+                                        colour= OS_grid_region)) +
     geom_point(size = 2) + # Changing point size
     # xlim(1.05,1.18) +
     # ylim(2,2.75) +
@@ -150,6 +165,8 @@ plot_save(Pb_legcutoff_plot, file_name = "Plots/Mixing plot grouped by legaslati
     theme(legend.position = "bottom")
 )
 
+plot_save(Pb_greater_five_plot, file_name = "Plots/Mixing plot of total Pb >5 groupd by OS region", 
+          width = 13, height = 8, dpi = 150) 
 
 #### GLM----
 (hist_Total_Pb<- ggplot(Pb_data, aes(x = Total_Pb)) + 
