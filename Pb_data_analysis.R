@@ -6,7 +6,9 @@ getwd()
 library(dplyr)
 library(tidyverse) 
 library(ggplot2)
-library(tidyr)  
+library(tidyr) 
+install.packages("ggpubr")
+library(ggpubr) 
 
 Pb_data <- read.csv("Data/Pb_tidy.csv")
 str(Pb_data)
@@ -133,11 +135,12 @@ Pb_greater_five <- subset(Pb_data, Total_Pb >5)  # Subsetting data into Total Pb
                         theme_ps() + 
                         xlab("Pb206/Pb207\n") +                             
                         ylab("\nPb208/Pb207") +
-                        theme(legend.position = "bottom")
+                        theme(legend.position = "bottom") +
+                        theme_ps()
 )
 
 plot_save(Pb_less_one_plot, file_name = "Plots/Mixing plot of total Pb <1 groupd by OS region", 
-width = 13, height = 8, dpi = 150) 
+          width = 13, height = 8, dpi = 150) 
 
 
 (Pb_one_five_plot<- ggplot(Pb_one_five, aes(x= Pb206_207 , y = Pb208_207,
@@ -148,7 +151,8 @@ width = 13, height = 8, dpi = 150)
     theme_ps() + 
     xlab("Pb206/Pb207\n") +                             
     ylab("\nPb208/Pb207") +
-    theme(legend.position = "bottom")
+    theme(legend.position = "bottom") +
+    theme_ps() 
 )
 
 plot_save(Pb_one_five_plot, file_name = "Plots/Mixing plot of total Pb 1-5 groupd by OS region", 
@@ -162,11 +166,16 @@ plot_save(Pb_one_five_plot, file_name = "Plots/Mixing plot of total Pb 1-5 group
     theme_ps() + 
     xlab("Pb206/Pb207\n") +                             
     ylab("\nPb208/Pb207") +
-    theme(legend.position = "bottom")
+    theme(legend.position = "bottom") +
+    theme_ps()
 )
 
 plot_save(Pb_greater_five_plot, file_name = "Plots/Mixing plot of total Pb >5 groupd by OS region", 
           width = 13, height = 8, dpi = 150) 
+
+Total_Pb_LC_groups_plots <- ggarrange(Pb_less_one_plot ,Pb_one_five_plot, Pb_greater_five_plot,
+                                      labels= C("Total Pb <1 μg L-1", "Total Pb 1-5 μg L-1",
+                                                "Total Pb >5 μg L-1"))
 
 #### GLM----
 (hist_Total_Pb<- ggplot(Pb_data, aes(x = Total_Pb)) + 
