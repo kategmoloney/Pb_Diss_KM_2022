@@ -225,6 +225,19 @@ Five_main_OS <- subset(Pb_data, OS_grid_region %in% c("NS", "NT", "NO", "NJ", "N
 
 plot_save(OS_grouping_five_main_plot, file_name = "Plots/Mixing plot of five main OS regions grouped by North/South classification", 
           width = 13, height = 8, dpi = 150) 
+
+
+(Reservoir_five_main_plot <- ggplot(Five_main_OS,aes(x= Pb206_207 , y = Pb208_207,
+                                                       colour= Supply_reservoir))) +
+  geom_point(size = 2, alpha = 0.5) +  # Changing point size and transparency
+  #xlim(1.05,1.18) +
+  #ylim(2,2.6) +
+  theme_ps() + 
+  #scale_fill_manual(values = c("lightsalmon", "cadetblue4")) +
+  #scale_colour_manual(values = c("lightsalmon", "cadetblue4")) +
+  xlab("Pb206/Pb207\n") +                             
+  ylab("\nPb208/Pb207")+
+  theme(legend.position = "bottom")
                            
 NS_samples <- subset(Pb_data, OS_grid_region == "NS")
 NT_samples <- subset(Pb_data, OS_grid_region == "NT")
@@ -315,8 +328,19 @@ plot_save(NT_legcutoffs_facet, file_name = "Plots/NT samples faceted by legislat
 plot_save(NX_plot, file_name = "Plots/Mixing plot NX samples grouped by reservoir", 
           width = 13, height = 8, dpi = 150) 
 
+(NX_total_Pb <- ggplot(NX_samples, aes(x= Pb206_207 , y = Pb208_207,
+                                   colour= Legislative_cutoffs))) +
+  geom_point(size = 2) +  # Changing point size 
+  #xlim(1.05,1.18) +
+  #ylim(2,2.6) +
+  theme_ps() + 
+  # scale_fill_manual(values = c("pink3", "yellow2", "royalblue3")) +
+  # scale_colour_manual(c("pink3", "yellow2", "royalblue3"))+
+  xlab("Pb206/Pb207\n") +                             
+  ylab("\nPb208/Pb207")+
+  theme(legend.position = "bottom")
 
-
+(NX_legcutoffs_facet <- NX_total_Pb + facet_grid(cols = vars(Legislative_cutoffs)))
 
 
 
@@ -337,6 +361,19 @@ plot_save(NX_plot, file_name = "Plots/Mixing plot NX samples grouped by reservoi
 plot_save(NO_plot, file_name = "Plots/Mixing plot NO samples grouped by reservoir", 
           width = 13, height = 8, dpi = 150) 
 
+(NO_total_Pb <- ggplot(NO_samples, aes(x= Pb206_207 , y = Pb208_207,
+                                       colour= Legislative_cutoffs))) +
+  geom_point(size = 2) +  # Changing point size 
+  #xlim(1.05,1.18) +
+  #ylim(2,2.6) +
+  theme_ps() + 
+  # scale_fill_manual(values = c("pink3", "yellow2", "royalblue3")) +
+  # scale_colour_manual(c("pink3", "yellow2", "royalblue3"))+
+  xlab("Pb206/Pb207\n") +                             
+  ylab("\nPb208/Pb207")+
+  theme(legend.position = "bottom")
+
+(NO_legcutoffs_facet <- NO_total_Pb + facet_grid(cols = vars(Legislative_cutoffs)))
 
 ### NJ
 
@@ -363,9 +400,20 @@ plot_save(NJ_plot, file_name = "Plots/Mixing plot NJ samples grouped by reservoi
 
 
 
+##### Pipe signatures---- 
+Pipe_sigs_data <- read.csv("Data/Pipe_sigs.csv")
 
-
-
+(Pipe_sigs_plott <- ggplot(Pipe_sigs_data, aes(x= Pb206_207 , y = Pb208_207,
+                                   colour= Pb_classification))) +
+  geom_point(size = 2) +  # Changing point size 
+  #xlim(1.05,1.18) +
+  #ylim(2,2.6) +
+  theme_ps() + 
+  # scale_fill_manual(values = c("pink3", "yellow2", "royalblue3")) +
+  # scale_colour_manual(c("pink3", "yellow2", "royalblue3"))+
+  xlab("Pb206/Pb207\n") +                             
+  ylab("\nPb208/Pb207")+
+  theme(legend.position = "bottom")
 
 
 
