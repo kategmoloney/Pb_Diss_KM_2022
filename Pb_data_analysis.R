@@ -403,7 +403,7 @@ plot_save(NJ_plot, file_name = "Plots/Mixing plot NJ samples grouped by reservoi
 ##### Pipe signatures---- 
 Pipe_sigs_data <- read.csv("Data/Pipe_sigs.csv")
 
-(Pipe_sigs_plott <- ggplot(Pipe_sigs_data, aes(x= Pb206_207 , y = Pb208_207,
+(Pipe_sigs_plot <- ggplot(Pipe_sigs_data, aes(x= Pb206_207 , y = Pb208_207,
                                    colour= Pb_classification))) +
   geom_point(size = 2) +  # Changing point size 
   #xlim(1.05,1.18) +
@@ -415,7 +415,8 @@ Pipe_sigs_data <- read.csv("Data/Pipe_sigs.csv")
   ylab("\nPb208/Pb207")+
   theme(legend.position = "bottom")
 
-
+plot_save(Pipe_sigs_plot, file_name = "Plots/Mixing plot pf pipe signatures with other environmental materials", 
+          width = 13, height = 8, dpi = 150) 
 
 
 
