@@ -51,6 +51,14 @@ plot_save <- function(plot_name, # first put the plot object name
   )
 }
 
+##### Plot postcode data ??? ---- 
+Postcode_data <- read.csv("Data/Sample_postcodes.csv")
+require(rgdal)
+require(sp)
+install.packages("plotGoogleMaps")
+require(plotGoogleMaps)
+
+
 #### Reservoir----
 (Pb_resevoir_plot <- ggplot(Pb_data, aes (x = Pb206_207 , y = Pb208_207, colour = Supply_reservoir)) +
     geom_point(size = 2) +                                               # Changing point size              # Adding linear model fit
@@ -85,6 +93,7 @@ plot_save(Pb_OS_plot, file_name = "Plots/Mixing plot grouped by OS grid", width 
 
 (Pb_OS_NS <- ggplot(Pb_data, aes (x = Pb206_207 , y = Pb208_207, colour = OS_grouping)) +
     geom_point(size = 2) +   # Changing point size     
+    #geom_quantile(method = "lm", aes(fill = OS_grouping)) +
     xlim(1.1,1.18) +
     ylim(2,2.75) +
     theme_ps() + 
