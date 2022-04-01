@@ -61,7 +61,7 @@ require(plotGoogleMaps)
 
 #### Reservoir----
 (Pb_resevoir_plot <- ggplot(Pb_data, aes (x = Pb206_207 , y = Pb208_207, colour = Supply_reservoir)) +
-    geom_point(size = 2) +                                               # Changing point size              # Adding linear model fit
+    geom_point(size = 2, alpha = 0.75) +                                               # Changing point size              # Adding linear model fit
     theme_ps() + 
     xlab("Pb206/Pb207\n") +                             
     ylab("\nPb208/Pb207") +
@@ -79,7 +79,7 @@ plot_save(Pb_resevoir_plot, file_name = "Plots/Mixing plot grouped by supply res
 #### OS Region----
 (Pb_OS_plot <- ggplot(Pb_data, aes (x = Pb206_207 , y = Pb208_207,
                       colour = OS_grid_region,)) +
-    geom_point(size = 2) + # Changing point size         
+    geom_point(size = 2, alpha = 0.6) + # Changing point size         
     xlim(1.05,1.18) +
     ylim(2.0, 2.75)+
     xlab("Pb206/Pb207\n") +                             
@@ -88,11 +88,17 @@ plot_save(Pb_resevoir_plot, file_name = "Plots/Mixing plot grouped by supply res
                                  "brown3", "cadetblue3", "coral2" ,"orange1" ,"darkolivegreen2")) +               
    scale_colour_manual(values = c("pink3", "yellow2", "royalblue3", "aquamarine2", "darkorchid",
                                   "brown3", "cadetblue3", "coral2" ,"orange1" ,"darkolivegreen2")) +
-    theme(legend.position = "left")+
+    theme(legend.position = "bottom")+
    labs(fill= "OS grid region")+
     theme_ps()
 )
+
 plot_save(Pb_OS_plot, file_name = "Plots/Mixing plot grouped by OS grid", width = 13, 
+          height = 8, dpi = 150) 
+
+(OS_region_facet <- Pb_OS_plot + facet_grid(cols = vars(Legislative_cutoffs)))
+
+plot_save(OS_region_facet, file_name = "Plots/Facet plot grouped by OS grid and legislative cutoffs", width = 13, 
           height = 8, dpi = 150) 
 
 (Pb_OS_NorthSouth <- ggplot(Pb_data, aes (x = Pb206_207 , y = Pb208_207, colour = OS_grouping)) +
@@ -103,12 +109,66 @@ plot_save(Pb_OS_plot, file_name = "Plots/Mixing plot grouped by OS grid", width 
     theme_ps() + 
     xlab("Pb206/Pb207\n") +                             
     ylab("\nPb208/Pb207") +
-    theme(legend.position = "right")
+    theme(legend.position = "bottom")
 )
-plot_save(Pb_OS_NS, file_name = "Plots/Mixing plot grouped by OS region", width = 13, 
+plot_save(Pb_OS_NorthSouth, file_name = "Plots/Mixing plot grouped by OS region", width = 13, 
           height = 8, dpi = 150) 
 
+(OS_grouping_facet <- Pb_OS_NorthSouth + facet_grid(cols = vars((Legislative_cutoffs))))
+
+(OS_regions_sep_and_group <- ggarrange(Pb_OS_plot, Pb_OS_NorthSouth,
+                                       labels = c("10 OS regions", 
+                                        "OS regions grouped by North/South divide")))
+
+plot_save(OS_regions_sep_and_group, file_name = "Plots/OS regions alongisde North South grouping", width = 13, 
+          height = 8, dpi = 150) 
+
+#### Pb206/Pb207 ----
+(Pb206_207_plot <-  ggplot(Pb_data, aes(x= OS_grid_region , y = Pb206_207,
+                                        colour= OS_grouping)) +
+   geom_point(size = 2, alpha = 0.6) + # Changing point size
+   # xlim(1.05,1.18) +
+   # ylim(2,2.75) +
+   theme_ps() + 
+   xlab("OS Region\n") +                             
+   ylab("\nPb206/Pb207") +
+   theme(legend.position = "bottom") +
+   theme_ps()
+)
+
+plot_save(Pb206_207_plot, file_name = "Plots/Pb206_Pb207 per OS region", width = 13, 
+          height = 8, dpi = 150) 
+
+(Pb208_207_plot <-  ggplot(Pb_data, aes(x= OS_grid_region , y = Pb208_207,
+                                        colour= OS_grouping)) +
+    geom_point(size = 2, alpha = 0.6) + # Changing point size
+    # xlim(1.05,1.18) +
+    # ylim(2,2.75) +
+    theme_ps() + 
+    xlab("OS Region\n") +                             
+    ylab("\nPb208/Pb207") +
+    theme(legend.position = "bottom") +
+    theme_ps()
+)
+
+plot_save(Pb208_207_plot, file_name = "Plots/Pb208_Pb207 per OS region", width = 13, 
+          height = 8, dpi = 150)
+
+(Isotope_ratios_plot <- ggarrange(Pb206_207_plot, Pb208_207_plot,
+                                  labels = "Pb206/Pb207", "Pb208/Pb207"))
+
 #### Total Pb----
+(Total_Pb_plot <- ggplot(Pb_data, aes(x= OS_grid_region , y = Total_Pb,
+                                      colour= OS_grouping)) +
+   geom_point(size = 2, alpha = 0.6) + # Changing point size
+   # xlim(1.05,1.18) +
+   # ylim(2,2.75) +
+   theme_ps() + 
+   xlab("OS Region\n") +                             
+   ylab("\nTotal Pb") +
+   theme(legend.position = "bottom") +
+   theme_ps()
+)
 
 Pb_data <- Pb_data %>% 
            group_by(Legislative_cutoffs =
@@ -123,7 +183,7 @@ levels(Pb_data$Total_Pb)<- c("<1", "1-5", ">5")
    
 
 (Pb_legcutoff_plot <- ggplot(Pb_data, aes (x = Pb206_207 , y = Pb208_207, colour = Legislative_cutoffs)) +
-    geom_point(size = 2) +  # Changing point size 
+    geom_point(size = 2, alpha = 0.6) +  # Changing point size 
     xlim(1.05,1.18) +
     ylim(2,2.6) +
     theme_ps() + 
@@ -131,10 +191,15 @@ levels(Pb_data$Total_Pb)<- c("<1", "1-5", ">5")
    # scale_colour_manual(c("pink3", "yellow2", "royalblue3"))+
     xlab("Pb206/Pb207\n") +                             
     ylab("\nPb208/Pb207")+
-    theme(legend.position = "right")
+    theme(legend.position = "bottom")
 )
 
 plot_save(Pb_legcutoff_plot, file_name = "Plots/Mixing plot grouped by legaslative cutoffs", width = 13, 
+          height = 8, dpi = 150) 
+
+(Leg_cutoffs_facet <- Pb_legcutoff_plot + facet_grid(cols = vars(Legislative_cutoffs)))
+
+plot_save(Leg_cutoffs_facet, file_name = "Plots/Facet of legaslative cutoffs", width = 13, 
           height = 8, dpi = 150) 
 
 
@@ -148,7 +213,7 @@ Pb_greater_five <- subset(Pb_data, Total_Pb >5)  # Subsetting data into Total Pb
 
 (Pb_less_one_plot<- ggplot(Pb_less_one, aes(x= Pb206_207 , y = Pb208_207,
                                    colour= OS_grid_region)) +
-                        geom_point(size = 2) + # Changing point size
+                        geom_point(size = 2, alpha = 0.6) + # Changing point size
                        # xlim(1.05,1.18) +
                        # ylim(2,2.75) +
                         theme_ps() + 
@@ -165,10 +230,12 @@ Pb_greater_five <- subset(Pb_data, Total_Pb >5)  # Subsetting data into Total Pb
 plot_save(Pb_less_one_plot, file_name = "Plots/Total Pb less than 1 grouped by OS region", 
           width = 13, height = 8, dpi = 150) 
 
+(Pb_less_one_facet <- Pb_less_one_plot + facet_grid(cols = vars(OS_grid_region)))
+
 
 (Pb_one_five_plot<- ggplot(Pb_one_five, aes(x= Pb206_207 , y = Pb208_207,
                                    colour= OS_grid_region)) +
-    geom_point(size = 2) + # Changing point size
+    geom_point(size = 2, alpha = 0.6) + # Changing point size
     # xlim(1.05,1.18) +
     # ylim(2,2.75) +
     theme_ps() + 
@@ -187,7 +254,7 @@ plot_save(Pb_one_five_plot, file_name = "Plots/Mixing plot of total Pb 1-5 group
 
 (Pb_greater_five_plot<- ggplot(Pb_greater_five, aes(x= Pb206_207 , y = Pb208_207,
                                         colour= OS_grid_region)) +
-    geom_point(size = 2) + # Changing point size
+    geom_point(size = 2, alpha = 0.6) + # Changing point size
     # xlim(1.05,1.18) +
     # ylim(2,2.75) +
     theme_ps() + 
@@ -202,14 +269,42 @@ plot_save(Pb_one_five_plot, file_name = "Plots/Mixing plot of total Pb 1-5 group
 plot_save(Pb_greater_five_plot, file_name = "Plots/Mixing plot of total Pb greater than 5 groupd by OS region", 
           width = 13, height = 8, dpi = 150) 
 
+(Pb_greater_five_facet <- Pb_greater_five_plot + facet_grid(cols = vars(OS_grid_region)))
+
 (Total_Pb_LC_groups_plots <- ggarrange(Pb_less_one_plot ,Pb_one_five_plot, Pb_greater_five_plot,
                                       labels= c("Total Pb <1 μg L-1", "Total Pb 1-5 μg L-1",
-                                                "Total Pb >5 μg L-1")))
+                                                "Total Pb <1 μg L-1")))
+
+(Total_Pb_lessone_greaterfive <- ggarrange (Pb_less_one_facet, Pb_greater_five_facet,
+                                            labels= "Total Pb <1 μg L-1", 
+                                            "Total Pb <1 μg L-1"))
 
 
-#### Four main OS regions ---- 
+#### Five main OS regions ---- 
 
 Five_main_OS <- subset(Pb_data, OS_grid_region %in% c("NS", "NT", "NO", "NJ", "NX"))
+
+(OS_region_five_main_plot <- ggplot(Five_main_OS,aes(x= Pb206_207 , y = Pb208_207,
+                                                       colour= OS_grid_region))) +
+  geom_point(size = 2, alpha = 0.5) +  # Changing point size and transparency
+  #xlim(1.05,1.18) +
+  #ylim(2,2.6) +
+  theme_ps() + 
+  #scale_fill_manual(values = c("lightsalmon", "cadetblue4")) +
+ # scale_colour_manual(values = c("lightsalmon", "cadetblue4")) +
+  xlab("Pb206/Pb207\n") +                             
+  ylab("\nPb208/Pb207")+
+  labs(caption = "Five main OS regions", )+
+  theme(legend.position = "bottom", 
+        plot.caption = element_text(hjust = 0.5))
+
+
+plot_save(OS_region_five_main_plot, file_name = "Plots/Mixing plot of five main OS regions grouped by OS region", 
+          width = 13, height = 8, dpi = 150) 
+
+new.env() 
+
+(Five_mainOS_facet <- OS_region_five_main_plot + facet_grid(cols = vars(Legislative_cutoffs)))
 
 (OS_grouping_five_main_plot <- ggplot(Five_main_OS,aes(x= Pb206_207 , y = Pb208_207,
                                                        colour= OS_grouping))) +
@@ -221,11 +316,20 @@ Five_main_OS <- subset(Pb_data, OS_grid_region %in% c("NS", "NT", "NO", "NJ", "N
     scale_colour_manual(values = c("lightsalmon", "cadetblue4")) +
     xlab("Pb206/Pb207\n") +                             
     ylab("\nPb208/Pb207")+
-    theme(legend.position = "bottom")
+    labs(caption = "North/South grouping of five main OS regions", )+
+    theme(legend.position = "bottom", 
+          plot.caption = element_text(hjust = 0.5))
 
 plot_save(OS_grouping_five_main_plot, file_name = "Plots/Mixing plot of five main OS regions grouped by North/South classification", 
           width = 13, height = 8, dpi = 150) 
 
+(Five_mainOS_facet <- OS_grouping_five_main_plot + facet_grid
+                              (cols = vars(Legislative_cutoffs)))
+
+
+(Five_mainOS_plots <- ggarrange(OS_region_five_main_plot, OS_grouping_five_main_plot,
+                                labels = "Five main OS regions", 
+                                "North/South grouping of five main OS regions"))
 
 (Reservoir_five_main_plot <- ggplot(Five_main_OS,aes(x= Pb206_207 , y = Pb208_207,
                                                        colour= Supply_reservoir))) +
@@ -245,6 +349,49 @@ NO_samples <- subset(Pb_data, OS_grid_region == "NO")
 NJ_samples <- subset(Pb_data, OS_grid_region == "NJ")
 NX_samples <- subset(Pb_data, OS_grid_region == "NX")
 
+### Central Belt (NT and NS)
+Central_data <- subset(Pb_data, OS_grid_region %in% c("NS", "NT"))
+
+(Central_plot <- ggplot(Central_data, aes(x= Pb206_207 , y = Pb208_207,
+                                   colour= OS_grid_region))) +
+  geom_point(size = 2) +  # Changing point size 
+  #xlim(1.05,1.18) +
+  #ylim(2,2.6) +
+  theme_ps() + 
+  # scale_fill_manual(values = c("pink3", "yellow2", "royalblue3")) +
+  # scale_colour_manual(c("pink3", "yellow2", "royalblue3"))+
+  xlab("Pb206/Pb207\n") +                             
+  ylab("\nPb208/Pb207")+
+  labs(caption = "Central Belt samples")+
+  theme(legend.position = "bottom", 
+        plot.caption = element_text(hjust = 0.5))
+
+(Central_facet <- Central_plot + facet_grid(cols = vars(Legislative_cutoffs)))
+
+plot_save(Central_plot, file_name = "Plots/Mixing plot Central Belt grouped by OS", 
+          width = 13, height = 8, dpi = 150) 
+
+
+### North East region
+NorthEast_data <- subset(Pb_data, OS_grid_region %in% c("NO", "NJ"))
+
+(NorthEast_plot <- ggplot(NorthEast_data, aes(x= Pb206_207 , y = Pb208_207,
+                                          colour= OS_grid_region))) +
+  geom_point(size = 2) +  # Changing point size 
+  #xlim(1.05,1.18) +
+  #ylim(2,2.6) +
+  theme_ps() + 
+  # scale_fill_manual(values = c("pink3", "yellow2", "royalblue3")) +
+  # scale_colour_manual(c("pink3", "yellow2", "royalblue3"))+
+  xlab("Pb206/Pb207\n") +                             
+  ylab("\nPb208/Pb207")+
+  labs(caption = "North east samples")+
+  theme(legend.position = "bottom", 
+        plot.caption = element_text(hjust = 0.5))
+
+plot_save(Central_plot, file_name = "Plots/Mixing plot North East grouped by OS", 
+          width = 13, height = 8, dpi = 150) 
+
 ### NS
 (NS_plot <- ggplot(NS_samples, aes(x= Pb206_207 , y = Pb208_207,
                                         colour= Supply_reservoir))) +
@@ -260,6 +407,9 @@ NX_samples <- subset(Pb_data, OS_grid_region == "NX")
 
 plot_save(NS_plot, file_name = "Plots/Mixing plot NS samples grouped by reservoir", 
           width = 13, height = 8, dpi = 150) 
+
+(NS_reservoir_facet <- NS_plot + facet_grid(cols = vars(Legislative_cutoffs)))
+
 
 (NS_total_Pb <- ggplot(NS_samples, aes(x= Pb206_207 , y = Pb208_207, 
                                        colour= Legislative_cutoffs)) +
@@ -293,6 +443,8 @@ plot_save(NS_legcutoffs_facet, file_name = "Plots/NS samples faceted by legislat
 
 plot_save(NT_plot, file_name = "Plots/Mixing plot NT samples grouped by reservoir", 
           width = 13, height = 8, dpi = 150) 
+
+(NT_legcutoffs_facet <- NT_plot + facet_grid(cols = vars(Legislative_cutoffs)))
 
 (NT_total_Pb <- ggplot(NT_samples, aes(x= Pb206_207 , y = Pb208_207, 
                                        colour= Legislative_cutoffs)) +
@@ -404,8 +556,8 @@ plot_save(NJ_plot, file_name = "Plots/Mixing plot NJ samples grouped by reservoi
 Pipe_sigs_data <- read.csv("Data/Pipe_sigs.csv")
 
 (Pipe_sigs_plot <- ggplot(Pipe_sigs_data, aes(x= Pb206_207 , y = Pb208_207,
-                                   colour= Pb_classification))) +
-  geom_point(size = 2) +  # Changing point size 
+                                   colour= Pb_material))) +
+  geom_point(size = 4, alpha = 0.75) +  # Changing point size 
   #xlim(1.05,1.18) +
   #ylim(2,2.6) +
   theme_ps() + 
@@ -415,7 +567,7 @@ Pipe_sigs_data <- read.csv("Data/Pipe_sigs.csv")
   ylab("\nPb208/Pb207")+
   theme(legend.position = "bottom")
 
-plot_save(Pipe_sigs_plot, file_name = "Plots/Mixing plot pf pipe signatures with other environmental materials", 
+plot_save(Pipe_sigs_plot, file_name = "Plots/Mixing plot of pipe signatures with other environmental materials", 
           width = 13, height = 8, dpi = 150) 
 
 
