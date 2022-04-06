@@ -15,7 +15,8 @@ library(tidyr)
 install.packages("ggpubr")
 library(ggpubr) 
 
-Pb_data <- read.csv("Data/Pb_tidy.csv")
+Pb_tidy <- read.csv("Data/Pb_tidy.csv")
+Pb_data <- Pb_tidy %>% filter(Total_Pb >= 0.13)   # removing total Pb data below LOD
 str(Pb_data)
 
 
