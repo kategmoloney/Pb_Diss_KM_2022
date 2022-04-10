@@ -14,8 +14,13 @@ library(ggplot2)
 library(tidyr) 
 install.packages("ggpubr")
 library(ggpubr) 
+library(ggmap)
+install.packages("rworldmap")
+library(rworldmap)
+install.packages("ggforce")
+library(ggforce)
 
-Pb_tidy <- read.csv("Data/Pb_tidy.csv")
+Pb_data <- read.csv("Data/Pb_tidy.csv")
 Pb_data <- Pb_tidy %>% filter(Total_Pb >= 0.13)   # removing total Pb data below LOD
 str(Pb_data)
 
@@ -52,13 +57,54 @@ plot_save <- function(plot_name, # first put the plot object name
   )
 }
 
-##### Plot postcode data ??? ---- 
-Postcode_data <- read.csv("Data/Sample_postcodes.csv")
-require(rgdal)
-require(sp)
-install.packages("plotGoogleMaps")
-require(plotGoogleMaps)
+##### Plot postcode data ---- 
+Postcode_data <- read.csv("Data/Postcodes_LAT_LONG.csv")
+                       # header = TRUE, sep = "\t")
+Postcode_coordinates <- subset(Postcode_data [c("Postcode", "OS_grid_region", 
+                                               "Latitude", "Longitude")])
 
+(prelim_postocde_map <- ggplot(Postcode_coordinates, aes(x= Longitude, y= Latitude,
+                                                         colour= OS_grid_region))+
+                               geom_point())
+
+world <- getMap(resolution = "low")
+
+(Postcode_map_world <- ggplot() +
+    geom_polygon(data = world, 
+                 aes(x = long, y = lat, group = group),
+                 fill = NA, colour = "black") + 
+    geom_point(data = Postcode_coordinates,               # Add coordinate data
+               aes(x = Longitude, y = Latitude, 
+                   colour = OS_grid_region)) +
+    coord_quickmap() +  # Prevents stretching when resizing
+    theme_classic() +  # Remove ugly grey background
+    xlab("Longitude") +
+    ylab("Latitude") + 
+    guides(colour=guide_legend(title="Ordanance survey region")))
+
+world@data$ADMIN
+
+# Call the vector in `borders()`
+world_Scotland <- world[world@data$ADMIN == "United Kingdom", ]
+
+(Scotland_postcodes <- ggplot() +
+    geom_polygon(data = world_Scotland, 
+                 aes(x = long, y = lat, group = group),
+                 fill = NA, colour = "black") + 
+    geom_point(data = Postcode_coordinates,  # Add and plot speices data
+               aes(x = Longitude, y = Latitude, 
+                   colour = OS_grid_region)) +
+    coord_quickmap() + 
+    facet_zoom(xlim = c(-8, 1), ylim = c(54.5, 60)) +
+   #xlim(-8, 1) +  # Set x axis limits
+    #ylim(54, 60) +  # Set y axis limits
+    theme_classic() +  # Remove ugly grey background
+    xlab("Longitude") +
+    ylab("Latitude") + 
+    guides(colour=guide_legend(title="Ordnance Survey region")))
+
+plot_save(Scotland_postcodes, file_name = "Plots/Sample postcode distribution", width = 13, 
+          height = 8, dpi = 150) 
 
 #### Reservoir----
 (Pb_resevoir_plot <- ggplot(Pb_data, aes (x = Pb206_207 , y = Pb208_207, colour = Supply_reservoir)) +
