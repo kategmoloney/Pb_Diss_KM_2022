@@ -1,0 +1,169 @@
+Pb_material,Postcode,Supply_reservoir,OS_grid_region,OS_grouping,Pb206_207,Pb208_207
+EH pipe,,,,,1.171,2.452
+EH pipe,,,,,1.169,2.45
+EH pipe,,,,,1.169,2.458
+EH pipe,,,,,1.156,2.429
+EH pipe,,,,,1.17,2.477
+EH pipe,,,,,1.169,2.453
+IV Pipe,,,,,1.129,2.43
+G Pipe,,,,,1.170,2.439
+Paint,,,,,1.117,2.422
+UK coal,,,,,1.185,2.466
+Geological,,,,,1.218,2.465
+Geological,,,,,1.147,2.428
+Geological,,,,,1.166,2.45
+UK petrol,,,,,1.082,2.342
+,KA32TP,Amlaird Milngavie Gorbals Zone,NS,Central/South,1.125,2.414
+,EH477DP,Balmore,NS,Central/South,1.075,2.355
+,EH482LY,Balmore,NS,Central/South,1.146,2.293
+,EH483RG,Balmore,NS,Central/South,1.164,2.422
+,EH496ED,Balmore,NS,Central/South,1.16,2.458
+,EH496LR,Balmore,NS,Central/South,1.056,2.326
+,EH496RH,Balmore,NS,Central/South,1.176,2.447
+,G209LF,Balmore,NS,Central/South,1.093,2.37
+,G326PA,Balmore,NS,Central/South,1.142,2.441
+,G333BZ,Balmore,NS,Central/South,1.111,2.364
+,G639DL,Balmore,NS,Central/South,1.145,2.348
+,G642JS,Balmore,NS,Central/South,1.104,2.364
+,G643BS,Balmore,NS,Central/South,1.092,2.373
+,G664DH,Balmore,NS,Central/South,1.128,2.394
+,G665NN,Balmore,NS,Central/South,1.127,2.377
+,G665QS,Balmore,NS,Central/South,1.117,2.385
+,G668JA,Balmore,NS,Central/South,1.126,2.368
+,G668JX,Balmore,NS,Central/South,1.123,2.383
+,G696QH,Balmore,NS,Central/South,1.123,2.371
+,G697BE,Balmore,NS,Central/South,1.106,2.368
+,G697NA,Balmore,NS,Central/South,1.177,2.46
+,G661EU,Balmore Carron Valley,NS,Central/South,1.15,2.405
+,G662RT,Balmore Carron Valley,NS,Central/South,1.076,2.323
+,G663PG,Balmore Carron Valley,NS,Central/South,1.126,2.406
+,G689GG,Balmore Carron Valley,NS,Central/South,1.114,2.391
+,G444TH,Balmore Castlemilk,NS,Central/South,1.153,2.423
+,G333GD,Balmore,NS,Central/South,1.084,2.35
+,G333QB,Balmore,NS,Central/South,1.09,2.325
+,G847AP,Blairlinnans,NS,Central/South,1.106,2.367
+,G614SE,Burncrooks,NS,Central/South,1.154,2.387
+,G628LQ,Burncrooks,NS,Central/South,1.129,2.376
+,FK12BX,Carron Valley,NS,Central/South,1.098,2.363
+,FK13DS,Carron Valley,NS,Central/South,1.127,2.403
+,FK20XD,Carron Valley,NS,Central/South,1.166,2.408
+,FK27YH,Carron Valley,NS,Central/South,1.099,2.379
+,FK28BA,Carron Valley,NS,Central/South,1.142,2.416
+,FK29PR,Carron Valley,NS,Central/South,1.133,2.404
+,FK41TL,Carron Valley,NS,Central/South,1.143,2.281
+,FK53NQ,Carron Valley,NS,Central/South,1.077,2.324
+,FK66AN,Carron Valley,NS,Central/South,1.113,2.41
+,FK66BH,Carron Valley,NS,Central/South,1.167,2.407
+,G744JZ,Daer,NS,Central/South,1.163,2.455
+,G758GU,Daer,NS,Central/South,1.161,2.402
+,G759FJ,Daer,NS,Central/South,1.123,2.381
+,KA290EJ,Greenock,NS,Central/South,1.136,2.278
+,KA308TD,Greenock,NS,Central/South,1.151,2.406
+,G115BL,Milngavie,NS,Central/South,1.093,2.344
+,G117ES,Milngavie,NS,Central/South,1.134,2.409
+,G117HD,Milngavie,NS,Central/South,1.1165,2.389
+,G117QQ,Milngavie,NS,Central/South,1.08,2.336
+,G120NN,Milngavie,NS,Central/South,1.12,2.374
+,G132TA,Milngavie,NS,Central/South,1.104,2.383
+,G156JZ,Milngavie,NS,Central/South,1.168,2.441
+,G156XB,Milngavie,NS,Central/South,1.098,2.353
+,G157JB,Milngavie,NS,Central/South,1.097,2.36
+,G200NH,Milngavie,NS,Central/South,1.134,2.393
+,G327AY,Milngavie,NS,Central/South,1.113,2.374
+,G328ES,Milngavie,NS,Central/South,1.16,2.432
+,G328LH,Milngavie,NS,Central/South,1.114,2.389
+,G402LR,Milngavie,NS,Central/South,1.101,2.38
+,G404SW,Milngavie,NS,Central/South,1.102,2.35
+,G413BQ,Milngavie,NS,Central/South,1.11,2.384
+,G413EY,Milngavie,NS,Central/South,1.087,2.347
+,G413SP,Milngavie,NS,Central/South,1.098,2.373
+,G414HD,Milngavie,NS,Central/South,1.062,2.31
+,G415BZ,Milngavie,NS,Central/South,1.155,2.423
+,G420BH,Milngavie,NS,Central/South,1.106,2.36
+,G420HU,Milngavie,NS,Central/South,1.09,2.327
+,G432AR,Milngavie,NS,Central/South,1.088,2.336
+,G432SR,Milngavie,NS,Central/South,1.151,2.366
+,G444BS,Milngavie,NS,Central/South,1.079,2.329
+,G444TT,Milngavie,NS,Central/South,1.159,2.423
+,G511AP,Milngavie,NS,Central/South,1.13,2.394
+,G513EF,Milngavie,NS,Central/South,1.149,2.422
+,G521HA,Milngavie,NS,Central/South,1.114,2.378
+,G536PX,Milngavie,NS,Central/South,1.179,2.456
+,G611BZ,Milngavie,NS,Central/South,1.137,2.423
+,G611RX,Milngavie,NS,Central/South,1.133,2.361
+,G612BN,Milngavie,NS,Central/South,1.1,2.336
+,G117EG,Milngavie,NS,Central/South,1.128,2.408
+,EH470PZ,Pateshill,NS,Central/South,1.079,2.348
+,FK30JN,Turret/Balmore/Carron Valley,NS,Central/South,1.117,2.391
+,EH459NA,Bonnycraig,NT,Central/South,1.111,2.33
+,EH459NB,Bonnycraig,NT,Central/South,1.103,2.375
+,EH459ND,Bonnycraig,NT,Central/South,1.102,2.367
+,EH320RU,Castle Moffat,NT,Central/South,1.107,2.385
+,EH332DB,Castle Moffat,NT,Central/South,1.154,2.277
+,EH332EN,Castle Moffat,NT,Central/South,1.142,2.383
+,EH413BE,Castle Moffat,NT,Central/South,1.144,2.396
+,EH414AE,Castle Moffat,NT,Central/South,1.104,2.364
+,EH421GN,Castle Moffat,NT,Central/South,1.091,2.36
+,EH104JS,Glencorse,NT,Central/South,1.165,2.455
+,EH105BN,Glencorse,NT,Central/South,1.131,2.412
+,EH105EZ,Glencorse,NT,Central/South,1.168,2.463
+,EH105HA,Glencorse,NT,Central/South,1.076,2.348
+,EH105QT,Glencorse,NT,Central/South,1.133,2.376
+,EH105RA,Glencorse,NT,Central/South,1.174,2.083
+,EH11 1QR,Glencorse,NT,Central/South,1.121,2.404
+,EH112QP,Glencorse,NT,Central/South,1.155,2.444
+,EH113UJ,Glencorse,NT,Central/South,1.144,2.418
+,EH125QF,Glencorse,NT,Central/South,1.134,2.408
+,EH125TN,Glencorse,NT,Central/South,1.144,2.422
+,EH126AQ,Glencorse,NT,Central/South,1.165,2.458
+,EH128BZ,Glencorse,NT,Central/South,1.125,2.403
+,EH151JT,Glencorse,NT,Central/South,1.085,2.373
+,EH166PE,Glencorse,NT,Central/South,1.094,2.373
+,EH178HU,Glencorse,NT,Central/South,1.132,2.405
+,EH209JE,Glencorse,NT,Central/South,1.168,2.441
+,EH209JH,Glencorse,NT,Central/South,1.079,2.342
+,EH3 9JB,Glencorse,NT,Central/South,1.135,2.404
+,EH41QD,Glencorse,NT,Central/South,1.152,2.419
+,EH42AN,Glencorse,NT,Central/South,1.125,2.406
+,EH42HA,Glencorse,NT,Central/South,1.125,2.304
+,EH43JZ,Glencorse,NT,Central/South,1.084,2.351
+,EH43PX,Glencorse,NT,Central/South,1.101,2.378
+,EH47DJ,Glencorse,NT,Central/South,1.125,2.417
+,EH53BY,Glencorse,NT,Central/South,1.129,2.394
+,EH53NJ,Glencorse,NT,Central/South,1.072,2.343
+,EH67PL,Glencorse,NT,Central/South,1.166,2.464
+,EH74AX,Glencorse,NT,Central/South,1.123,2.396
+,EH76JG,Glencorse,NT,Central/South,1.098,2.353
+,EH93EP,Glencorse,NT,Central/South,1.135,2.407
+,EH36LL,Glencorse?,NT,Central/South,1.129,2.404
+,EH345EJ,Hopes,NT,Central/South,1.08,2.362
+,EH139EW,Marchbank,NT,Central/South,1.074,2.34
+,EH143BY,Marchbank,NT,Central/South,1.152,2.404
+,EH145AE,Marchbank,NT,Central/South,1.105,2.372
+,EH145DZ,Marchbank,NT,Central/South,1.146,2.409
+,EH147EZ,Marchbank,NT,Central/South,1.061,2.317
+,EH51NA,Marchbank,NT,Central/South,1.109,2.396
+,EH546JT,Marchbank,NT,Central/South,1.153,2.438
+,EH64QF,Marchbank,NT,Central/South,1.132,2.403
+,DG109DP,Moffat,NT,Central/South,1.14,2.406
+,DG109HD,Moffat,NT,Central/South,1.123,2.362
+,DG109JJ,Moffat,NT,Central/South,1.168,2.443
+,DG109JX,Moffat,NT,Central/South,1.123,2.41
+,TD113BA,Rawburn,NT,Central/South,1.083,2.315
+,TD113NN,Rawburn,NT,Central/South,1.085,2.386
+,TD145EY,Rawburn,NT,Central/South,1.153,2.423
+,EH139LB,Roseberry,NT,Central/South,1.171,2.436
+,EH181DA,Roseberry,NT,Central/South,1.156,2.339
+,EH218DQ,Roseberry,NT,Central/South,1.139,2.408
+,EH260LJ,Roseberry,NT,Central/South,1.147,2.39
+,EH268JU,Roseberry,NT,Central/South,1.159,2.394
+,EH269HT,Roseberry,NT,Central/South,1.135,2.388
+,EH106EY,Rosebery,NT,Central/South,1.147,2.436
+,EH217TJ,Rosebery,NT,Central/South,1.118,2.387
+,EH218DY,Rosebery,NT,Central/South,1.097,2.381
+,EH320PP,Rosebery Castle Moffat,NT,Central/South,1.18,2.427
+,EH320ST,Rosebery Castle Moffat,NT,Central/South,1.161,2.401
+,EH329AT,Rosebery Castle Moffat,NT,Central/South,1.106,1.365
+,EH329DJ,Rosebery Castle Moffat,NT,Central/South,1.099,2.38
+,EH355LJ,Rosebery Hopes,NT,Central/South,1.124,2.396
+,EH355LX,Rosebery Hopes,NT,Central/South,1.159,2.42
