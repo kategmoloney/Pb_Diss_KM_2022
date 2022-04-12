@@ -19,6 +19,7 @@ install.packages("rworldmap")
 library(rworldmap)
 install.packages("ggforce")
 library(ggforce)
+library(MASS)
 
 Pb_data <- read.csv("Data/Pb_tidy.csv")
 Pb_total <- read.csv("Data/Pb_total_LOD.csv")
@@ -643,7 +644,18 @@ Central_and_pipes <- read.csv("Data/Central_and_Pipe_ratios.csv")
   ylab("\nPb208/Pb207")+
   theme(legend.position = "bottom")
 
+##### Chi squared test ----
 
+Pb_data <- Pb_data %>%                   # grouping Total Pb data into < and > than MCL of 5μg L-1
+  group_by(MCL_threshold =
+             case_when(
+               Total_Pb <=5 ~ "less than five",
+               Total_Pb >5 ~ "greater than five"
+             ))
+Pb_data_stats <- subset(Pb_data [c("Postcode", "OS_grouping", "MCL_threshold")])
+
+chisq.test(Pb_data_stats$OS_grouping, Pb_data_stats$MCL_threshold,
+           simulate.p.value = TRUE)
 
 #### GLM----
 (hist_Total_Pb<- ggplot(Pb_data, aes(x = Total_Pb)) + 
