@@ -657,6 +657,19 @@ Pb_data_stats <- subset(Pb_data [c("Postcode", "OS_grouping", "MCL_threshold")])
 chisq.test(Pb_data_stats$OS_grouping, Pb_data_stats$MCL_threshold,
            simulate.p.value = TRUE)
 
+Pb_total <- Pb_total %>%                   # grouping Total Pb data into < and > than MCL of 5μg L-1
+  group_by(MCL_threshold =
+             case_when(
+               Total_Pb <=5 ~ "less than five",
+               Total_Pb >5 ~ "greater than five"
+             ))
+
+
+Pb_data_stats_test <- subset(Pb_total[c("Postcode", "OS_grouping", "MCL_threshold")])
+
+chisq.test(Pb_data_stats_test$OS_grouping, Pb_data_stats_test$MCL_threshold,
+           simulate.p.value = TRUE)
+
 #### GLM----
 (hist_Total_Pb<- ggplot(Pb_data, aes(x = Total_Pb)) + 
    geom_histogram(aes(y = ..count..), binwidth = 0.7,
