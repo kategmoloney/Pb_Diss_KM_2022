@@ -24,7 +24,7 @@ library(MASS)
 Pb_data <- read.csv("Data/Pb_tidy.csv")
 Pb_total <- read.csv("Data/Pb_total_LOD.csv")
 Pb_ratios <- read.csv("Data/Pb_ratio_data.csv")
-#Pb_data <- Pb_tidy %>% filter(Total_Pb >= 0.13)   # removing total Pb data below LOD
+#Pb_data <- Pb_data %>% filter(Total_Pb >= 0.13)   # removing total Pb data below LOD
 str(Pb_data)
 
 
@@ -152,7 +152,7 @@ plot_save(Pb_OS_plot, file_name = "Plots/Mixing plot grouped by OS grid", width 
 plot_save(OS_region_facet, file_name = "Plots/Facet plot grouped by OS grid and legislative cutoffs", width = 13, 
           height = 8, dpi = 150) 
 
-(Pb_OS_NorthSouth <- ggplot(Pb_ratios, aes (x = Pb206_207 , y = Pb208_207, colour = OS_grouping)) +
+(Pb_OS_NorthSouth <- ggplot(Pb_total, aes (x = Pb206_207 , y = Pb208_207, colour = OS_grouping)) +
     geom_point(size = 2, alpha = 0.5) +   # Changing point size     
     #geom_quantile(method = "lm", aes(fill = OS_grouping)) +
     xlim(1.1,1.18) +
@@ -166,6 +166,9 @@ plot_save(Pb_OS_NorthSouth, file_name = "Plots/Mixing plot grouped by OS region"
           height = 8, dpi = 150) 
 
 (OS_grouping_facet <- Pb_OS_NorthSouth + facet_grid(cols = vars((Legislative_cutoffs))))
+
+plot_save(OS_grouping_facet, file_name = "Plots/North South divide of total data facted by leg cutoffs", width = 13, 
+          height = 8, dpi = 150) 
 
 (OS_regions_sep_and_group <- ggarrange(Pb_OS_plot, Pb_OS_NorthSouth,
                                        labels = c("10 OS regions", 
@@ -241,7 +244,7 @@ Pb_total <- Pb_total %>%
 levels(Pb_data$Total_Pb)<- c("<1", "1-5", ">5")
    
 
-(Pb_legcutoff_plot <- ggplot(Pb_data, aes (x = Pb206_207 , y = Pb208_207, colour = Legislative_cutoffs)) +
+(Pb_legcutoff_plot <- ggplot(Pb_total, aes (x = Pb206_207 , y = Pb208_207, colour = Legislative_cutoffs)) +
     geom_point(size = 2, alpha = 0.6) +  # Changing point size 
     xlim(1.05,1.18) +
     ylim(2,2.6) +
@@ -341,7 +344,7 @@ plot_save(Pb_greater_five_plot, file_name = "Plots/Mixing plot of total Pb great
 
 #### Five main OS regions ---- 
 
-Five_main_OS <- subset(Pb_data, OS_grid_region %in% c("NS", "NT", "NO", "NJ", "NX"))
+Five_main_OS <- subset(Pb_total, OS_grid_region %in% c("NS", "NT", "NO", "NJ", "NX"))
 
 (OS_region_five_main_plot <- ggplot(Five_main_OS,aes(x= Pb206_207 , y = Pb208_207,
                                                        colour= OS_grid_region))) +
@@ -357,14 +360,25 @@ Five_main_OS <- subset(Pb_data, OS_grid_region %in% c("NS", "NT", "NO", "NJ", "N
   theme(legend.position = "bottom", 
         plot.caption = element_text(hjust = 0.5))
 
-
 plot_save(OS_region_five_main_plot, file_name = "Plots/Mixing plot of five main OS regions grouped by OS region", 
           width = 13, height = 8, dpi = 150) 
 
-new.env() 
-
 (Five_mainOS_facet <- OS_region_five_main_plot + 
     facet_grid(cols = vars(Legislative_cutoffs)))
+
+(OS_five_main_legcutoff_plot <- ggplot(Five_main_OS,aes(x= Pb206_207 , y = Pb208_207,
+                                                    colour= Legislative_cutoffs))) +
+  geom_point(size = 2, alpha = 0.5) +  # Changing point size and transparency
+  #xlim(1.05,1.18) +
+  #ylim(2,2.6) +
+  theme_ps() + 
+  #scale_fill_manual(values = c("lightsalmon", "cadetblue4")) +
+  # scale_colour_manual(values = c("lightsalmon", "cadetblue4")) +
+  xlab("Pb206/Pb207\n") +                             
+  ylab("\nPb208/Pb207")+
+  labs(caption = "Five main OS regions", )+
+  theme(legend.position = "bottom", 
+        plot.caption = element_text(hjust = 0.5))
 
 (OS_grouping_five_main_plot <- ggplot(Five_main_OS,aes(x= Pb206_207 , y = Pb208_207,
                                                        colour= OS_grouping))) +
@@ -451,6 +465,26 @@ NorthEast_data <- subset(Pb_total, OS_grid_region %in% c("NO", "NJ"))
 
 plot_save(Central_plot, file_name = "Plots/Mixing plot North East grouped by OS", 
           width = 13, height = 8, dpi = 150) 
+
+### Central vs North East 
+Central_NE_data <- subset(Pb_total, OS_grid_region %in% c("NO", "NJ", "NS", "NT"))
+
+(Central_NE_plot <- ggplot(Central_NE_data, aes(x= Pb206_207 , y = Pb208_207,
+                                              colour= OS_grouping))) +
+  geom_point(size = 2) +  # Changing point size 
+  #xlim(1.05,1.18) +
+  #ylim(2,2.6) +
+  theme_ps() + 
+  # scale_fill_manual(values = c("pink3", "yellow2", "royalblue3")) +
+  # scale_colour_manual(c("pink3", "yellow2", "royalblue3"))+
+  xlab("Pb206/Pb207\n") +                             
+  ylab("\nPb208/Pb207")+
+  labs(caption = "North east and Central Belt samples")+
+  theme(legend.position = "bottom", 
+        plot.caption = element_text(hjust = 0.5))
+
+(Central_NE_facet <- Central_NE_plot + facet_grid(cols = vars(Legislative_cutoffs)))
+
 
 ### NS
 (NS_plot <- ggplot(NS_samples, aes(x= Pb206_207 , y = Pb208_207,
@@ -634,7 +668,7 @@ Central_and_pipes <- read.csv("Data/Central_and_Pipe_ratios.csv")
 
 (Central_and_pipes_plot <- ggplot(Central_and_pipes, aes(x= Pb206_207 , y = Pb208_207,
                                               colour= Pb_material))) +
-  geom_point(size = 4, alpha = 0.75) +  # Changing point size 
+  geom_point(size = 2.5, alpha = 0.5) +  # Changing point size 
   #xlim(1.05,1.18) +
   #ylim(2,2.6) +
   theme_ps() + 
@@ -643,6 +677,10 @@ Central_and_pipes <- read.csv("Data/Central_and_Pipe_ratios.csv")
   xlab("Pb206/Pb207\n") +                             
   ylab("\nPb208/Pb207")+
   theme(legend.position = "bottom")
+
+plot_save(Central_and_pipes_plot, file_name = "Plots/Mixing plot of pipe sigs and Central Bellt samples ", 
+          width = 13, height = 8, dpi = 150) 
+
 
 ##### Chi squared test ----
 
@@ -665,13 +703,25 @@ Pb_total <- Pb_total %>%                   # grouping Total Pb data into < and >
              ))
 
 
-Pb_data_stats_test <- subset(Pb_total[c("Postcode", "OS_grouping", "MCL_threshold")])
+Pb_data_stats <- subset(Pb_total[c("Postcode", "OS_grouping", "MCL_threshold")])
 
-chisq.test(Pb_data_stats_test$OS_grouping, Pb_data_stats_test$MCL_threshold,
+chisq.test(Pb_data_stats$OS_grouping, Pb_data_stats$MCL_threshold,
            simulate.p.value = TRUE)
 
+(Chi_boxplot <- ggplot(Pb_data,aes(x = OS_grouping, y = MCL_threshold))+
+    geom_boxplot(aes(fill = OS_grouping))+
+    theme_ps() +
+    #scale_fill_manual(values = c("navy", "forestgreen", "violetred")) +               # Adding custom colours
+    #scale_colour_manual(values = c("navy", "forestgreen", "violetred")) +             # Adding custom colours
+    ylab("MCL threshold\n") +                             
+    xlab("\nOS grouping") +
+    theme(axis.text.x = element_text(size = 12)) +
+    theme(axis.text.y = element_text(size = 12)) +
+    theme(legend.position = "none")
+)
+
 #### GLM----
-(hist_Total_Pb<- ggplot(Pb_data, aes(x = Total_Pb)) + 
+(hist_Total_Pb<- ggplot(Pb_total, aes(x = Total_Pb)) + 
    geom_histogram(aes(y = ..count..), binwidth = 0.7,
                   colour = "honeydew4", fill = "peru") +
      scale_y_log10() +
