@@ -1,15 +1,16 @@
-Material,Pb_material,Pb206_207,Pb208_207
-EDI/EL pipe 1,EH pipe,1.171,2.452
-EDI/EL pipe 2,EH pipe,1.169,2.45
-EDI/EL pipe 3,EH pipe,1.169,2.458
-EDI/EL pipe 4,EH pipe,1.156,2.429
-EDI/EL pipe 5,EH pipe,1.17,2.477
-EDI/EL pipe 6,EH pipe,1.169,2.453
-Inverness pipe,IV Pipe,1.129,2.43
-Galsgow pipe,G Pipe,1.17,2.439
-Pb paint additive ,Paint,1.117,2.422
-UK coal,UK coal,1.185,2.466
-River sediment,Geological,1.218,2.465
-Lake sediment ,Geological,1.147,2.428
-Peat,Geological,1.166,2.45
-UK leaded petrol,UK petrol,1.082,2.342
+Material,Pb_material,Pb206_207,St_dev_x,Pb208_207,St_dev_y
+EDI/EL pipe 1,EH pipe,1.165,0.006,2.441,0.011
+EDI/EL pipe 2,EH pipe,1.163,0.006,2.438,0.012
+EDI/EL pipe 3,EH pipe,1.165,0.005,2.447,0.017
+EDI/EL pipe 4,EH pipe,1.157,0.014,2.429,0.018
+EDI/EL pipe 5,EH pipe,1.165,0.006,2.460,0.034
+EDI/EL pipe 6,EH pipe,1.166,0.003,2.442,0.011
+Inverness pipe,IV Pipe,1.133,0.006,2.426,0.006
+Galsgow pipe,G Pipe,1.170,0.000,2.439,0.000
+Pb paint additive ,Paint,1.117,0.030,2.422,0.062
+UK coal,UK coal,1.185,0.002,2.466,0.005
+River sediment,Geological,1.218,0.003,2.465,0.015
+Lake sediment ,Geological,1.147,0.002,2.428,0.005
+Peat,Geological,1.166,0.002,2.450,0.003
+UK leaded petrol,UK petrol,1.082,0.024,2.342,0.018
+Scottish Ore,Scottish ore ,1.170,0.003,2.440,0.003
