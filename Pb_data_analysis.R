@@ -651,11 +651,14 @@ plot_save(NJ_plot, file_name = "Plots/Mixing plot NJ samples grouped by reservoi
 Pipe_sigs_data <- read.csv("Data/Pipe_sigs.csv")
 
 (Pipe_sigs_plot <- ggplot(Pipe_sigs_data, aes(x= Pb206_207 , y = Pb208_207,
-                                   colour= Pb_material))) +
+                                   colour= Pb_material, shape=Pb_material))) +
   geom_point(size = 2, alpha = 0.5) +  # Changing point size 
   geom_errorbar(aes(x = Pb206_207, ymin = Pb208_207-St_dev_y, ymax = Pb208_207+St_dev_y), width = 0) + 
   geom_errorbarh(aes(y = Pb208_207, xmin = Pb206_207-St_dev_x, xmax = Pb206_207+St_dev_x), height = 0)+
-  #xlim(1.05,1.18) +
+  scale_shape_manual(values = c("EH pipe"=15, "Geological"=18, "Scottish ore"= 11, 
+                               "UK petrol"=16, "G Pipe"=19, "Paint"=20, "UK coal"=21,
+                                "Water sample"=22, "IV Pipe"=17)) +
+   #xlim(1.05,1.18) +
   #ylim(2,2.6) +
   theme_ps() + 
   # scale_fill_manual(values = c("pink3", "yellow2", "royalblue3")) +
@@ -667,17 +670,17 @@ Pipe_sigs_data <- read.csv("Data/Pipe_sigs.csv")
 plot_save(Pipe_sigs_plot, file_name = "Plots/Mixing plot of pipe signatures with other environmental materials", 
           width = 13, height = 8, dpi = 150) 
 
-Central_and_pipes <- read.csv("Data/Central_and_Pipe_ratios.csv")
+Central_and_pipes <- read.csv("Data/Central_and_Pipe_ratios_final.csv")
 
 (Central_and_pipes_plot <- ggplot(Central_and_pipes, aes(x= Pb206_207 , y = Pb208_207,
                                               colour= Pb_material, shape = Pb_material))) +
   geom_point(size = 2.5, alpha = 0.5) +  # Changing point size 
   geom_errorbar(aes(x = Pb206_207, ymin = Pb208_207-St_dev_y, ymax = Pb208_207+St_dev_y), width = 0) + 
   geom_errorbarh(aes(y = Pb208_207, xmin = Pb206_207-St_dev_x, xmax = Pb206_207+St_dev_x), height = 0)+
-  scale_shape_manual(values = c("EH pipe"=15, "Geological"=18, "Scottish ore"= 17, 
+  scale_shape_manual(values = c("EH pipe"=15, "Geological"=18, "Scottish ore"= 11, 
                                 "UK petrol"=16, "G pipe"=19, "Paint"=20, "UK coal"=21,
                                 "Water sample"=22))+
-  #xlim(1.05,1.18) +
+  #xlim(1.15,1.18) +
   ylim(2.25,2.5) +
   theme_ps() + 
   # scale_fill_manual(values = c("pink3", "yellow2", "royalblue3")) +
@@ -693,11 +696,11 @@ plot_save(Central_and_pipes_plot, file_name = "Plots/Mixing plot of pipe sigs an
 NE_and_pipe <- read.csv("Data/NE_Pipe_and_Samples.csv")
 
 (NE_and_pipes_plot <- ggplot(NE_and_pipe, aes(x= Pb206_207 , y = Pb208_207,
-                                                         colour= Pb_Material))) +
+                                    colour= Pb_Material, shape= Pb_Material))) +
   geom_point(size = 2.5, alpha = 0.5) +  # Changing point size 
   geom_errorbar(aes(x = Pb206_207, ymin = Pb208_207-St_dev_y, ymax = Pb208_207+St_dev_y), width = 0) + 
   geom_errorbarh(aes(y = Pb208_207, xmin = Pb206_207-St_dev_x, xmax = Pb206_207+St_dev_x), height = 0)+
-  scale_shape_manual(values = c("IV pipe"=15, "Geological"=18, "Scottish ore"=17, 
+  scale_shape_manual(values = c("IV pipe"=17, "Geological"=18, "Scottish ore"=11, 
                                 "UK petrol"=16, "Paint"=20, "UK coal"=21,
                                 "Water sample"=22)) +
   #xlim(1.05,1.18) +
