@@ -103,12 +103,18 @@ world_Scotland <- world[world@data$ADMIN == "United Kingdom", ]
    #xlim(-8, 1) +  # Set x axis limits
     #ylim(54, 60) +  # Set y axis limits
     theme_classic() +  # Remove ugly grey background
+    theme(legend.key.size = unit(1, 'cm'), #change legend key size
+          legend.key.height = unit(1, 'cm'), #change legend key height
+          legend.key.width = unit(1, 'cm'), #change legend key width
+          legend.title = element_text(size=13), #change legend title font size
+          legend.text = element_text(size=11)) + #change legend text font size
     xlab("Longitude") +
     ylab("Latitude") + 
+    scale_color_brewer(palette = "Paired") +
     guides(colour=guide_legend(title="Ordnance Survey region")))
 
 plot_save(Scotland_postcodes, file_name = "Plots/Sample postcode distribution", width = 13, 
-          height = 8, dpi = 150) 
+          height = 9, dpi = 500) 
 
 
 #### Reservoir----
@@ -236,26 +242,36 @@ Pb_data <- Pb_data %>%
 Pb_total <- Pb_total %>% 
   group_by(Legislative_cutoffs =
              case_when(
-               Total_Pb <1 ~ "<1",
-               Total_Pb >=1 & Total_Pb <=5 ~ "1-5",
-               Total_Pb >5 ~ ">5", 
+               Total_Pb <1 ~ "less than one",
+               Total_Pb >=1 & Total_Pb <=5 ~ "one to five",
+               Total_Pb >5 ~ "greater than five", 
              ))
 
+Pb_total_F <- Pb_total
 
-levels(Pb_data$Total_Pb)<- c("<1", "1-5", ">5")
+
+levels(Pb_total_F$Legislative_cutoffs)<- c("<1", "1-5", ">5")
+
+Legislative_cutoffs <- factor(Pb_total_F$Legislative_cutoffs,
+                              levels = c("<1", "1-5", ">5"))
+
+factor(Legislative_cutoffs, levels = c("<1", "1-5", ">5"))
    
 
-(Pb_legcutoff_plot <- ggplot(Pb_total, aes (x = Pb206_207 , y = Pb208_207, colour = Legislative_cutoffs)) +
+(Pb_legcutoff_plot <- ggplot(Pb_total_F, aes (x = Pb206_207 , y = Pb208_207, colour = Legislative_cutoffs)) +
     geom_point(size = 2, alpha = 0.6) +  # Changing point size 
     xlim(1.05,1.18) +
     ylim(2,2.6) +
     theme_ps() + 
    # scale_fill_manual(values = c("pink3", "yellow2", "royalblue3")) +
    # scale_colour_manual(c("pink3", "yellow2", "royalblue3"))+
+   scale_fill_discrete(limits = c("<1", "1-5", ">5")) +
     xlab("Pb206/Pb207\n") +                             
     ylab("\nPb208/Pb207")+
     theme(legend.position = "bottom")
 )
+
+(Pb_legcutoff_plot + scale_fill_hue(limits = c("<1", "1-5", ">5")))
 
 plot_save(Pb_legcutoff_plot, file_name = "Plots/Mixing plot grouped by legaslative cutoffs", width = 13, 
           height = 8, dpi = 150) 
@@ -370,6 +386,7 @@ plot_save(OS_region_five_main_plot, file_name = "Plots/Mixing plot of five main 
 (OS_five_main_legcutoff_plot <- ggplot(Five_main_OS,aes(x= Pb206_207 , y = Pb208_207,
                                                     colour= Legislative_cutoffs))) +
   geom_point(size = 2, alpha = 0.5) +  # Changing point size and transparency
+  facet_wrap(vars(Legislative_cutoffs)) +
   #xlim(1.05,1.18) +
   #ylim(2,2.6) +
   theme_ps() + 
@@ -381,9 +398,17 @@ plot_save(OS_region_five_main_plot, file_name = "Plots/Mixing plot of five main 
   theme(legend.position = "bottom", 
         plot.caption = element_text(hjust = 0.5))
 
+plot_save(OS_five_main_legcutoff_plot, file_name = "Plots/Mixing plot of five main OS regions faceted by leg cutoff", 
+          width = 13, height = 8, dpi = 150) 
+
+(OS_five_main_legcutoff_plot_facet <- OS_five_main_legcutoff_plot + 
+    facet_grid(cols = vars(Legislative_cutoffs)))
+
+
 (OS_grouping_five_main_plot <- ggplot(Five_main_OS,aes(x= Pb206_207 , y = Pb208_207,
                                                        colour= OS_grouping))) +
     geom_point(size = 2, alpha = 0.5) +  # Changing point size and transparency
+  facet_wrap(vars(Legislative_cutoffs)) + 
     #xlim(1.05,1.18) +
     #ylim(2,2.6) +
     theme_ps() + 
@@ -428,8 +453,9 @@ NX_samples <- subset(Pb_total, OS_grid_region == "NX")
 Central_data <- subset(Pb_total, OS_grid_region %in% c("NS", "NT"))
 
 (Central_plot <- ggplot(Central_data, aes(x= Pb206_207 , y = Pb208_207,
-                                   colour= Legislative_cutoffs))) +
+                                   colour= OS_grid_region)) +
   geom_point(size = 2) +  # Changing point size 
+  facet_wrap(vars(Legislative_cutoffs)) +
   #xlim(1.05,1.18) +
   #ylim(2,2.6) +
   theme_ps() + 
@@ -438,12 +464,15 @@ Central_data <- subset(Pb_total, OS_grid_region %in% c("NS", "NT"))
   xlab("Pb206/Pb207\n") +                             
   ylab("\nPb208/Pb207")+
   labs(caption = "Central Belt samples")+
-  theme(legend.position = "bottom", 
-        plot.caption = element_text(hjust = 0.5))
+  guides(colour=guide_legend(title="OS region")) + 
+ scale_x_continuous(breaks = c(1.05,1.10,1.15,1.2)) +
+    scale_color_brewer(palette = "Paired") +
+  theme(legend.position = "bottom",
+        plot.caption = element_text(hjust = 0.5)))
 
 (Central_facet <- Central_plot + facet_grid(cols = vars(Legislative_cutoffs)))
 
-plot_save(Central_plot, file_name = "Plots/Mixing plot Central Belt grouped by OS", 
+plot_save(Central_plot, file_name = "Plots/Mixing plot Central Belt grouped by OS and faceted by leg cutoffs", 
           width = 13, height = 8, dpi = 150) 
 
 
@@ -453,14 +482,18 @@ NorthEast_data <- subset(Pb_total, OS_grid_region %in% c("NO", "NJ"))
 (NorthEast_plot <- ggplot(NorthEast_data, aes(x= Pb206_207 , y = Pb208_207,
                                           colour= OS_grid_region))) +
   geom_point(size = 2) +  # Changing point size 
+  facet_wrap(vars(Legislative_cutoffs)) +
   #xlim(1.05,1.18) +
   #ylim(2,2.6) +
   theme_ps() + 
+  guides(colour=guide_legend(title="OS region")) +
   # scale_fill_manual(values = c("pink3", "yellow2", "royalblue3")) +
   # scale_colour_manual(c("pink3", "yellow2", "royalblue3"))+
   xlab("Pb206/Pb207\n") +                             
   ylab("\nPb208/Pb207")+
   labs(caption = "North east samples")+
+  scale_x_continuous(breaks = c(1.05,1.10,1.15,1.2)) +
+  scale_color_brewer(palette = "Paired") +
   theme(legend.position = "bottom", 
         plot.caption = element_text(hjust = 0.5))
 
@@ -651,14 +684,14 @@ plot_save(NJ_plot, file_name = "Plots/Mixing plot NJ samples grouped by reservoi
 Pipe_sigs_data <- read.csv("Data/Pipe_sigs.csv")
 
 (Pipe_sigs_plot <- ggplot(Pipe_sigs_data, aes(x= Pb206_207 , y = Pb208_207,
-                                   colour= Pb_material, shape=Pb_material))) +
+                                   colour= Pb_material))) +
   geom_point(size = 2, alpha = 0.5) +  # Changing point size 
   geom_errorbar(aes(x = Pb206_207, ymin = Pb208_207-St_dev_y, ymax = Pb208_207+St_dev_y), width = 0) + 
   geom_errorbarh(aes(y = Pb208_207, xmin = Pb206_207-St_dev_x, xmax = Pb206_207+St_dev_x), height = 0)+
-  scale_shape_manual(values = c("EH pipe"=15, "Geological"=18, "Scottish ore"= 11, 
-                               "UK petrol"=16, "G Pipe"=19, "Paint"=20, "UK coal"=21,
-                                "Water sample"=22, "IV Pipe"=17)) +
-   #xlim(1.05,1.18) +
+  #scale_shape_manual(values = c("EH pipe"=15, "Geological"=18, "Scottish ore"= 11, 
+                              # "UK petrol"=16, "G Pipe"=19, "Paint"=20, "UK coal"=21,
+                              #  "Water sample"=22, "IV Pipe"=17)) +
+  # xlim(1.15,1.18) +
   #ylim(2,2.6) +
   theme_ps() + 
   # scale_fill_manual(values = c("pink3", "yellow2", "royalblue3")) +
