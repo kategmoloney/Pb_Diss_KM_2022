@@ -4,7 +4,7 @@
 
 remotes::update_packages("rlang")
 
-getwd()
+### Loading packages ---- 
 library(dplyr)
 remove.packages(c("tidyverse","ggplot2"))
 install.packages("tidyverse", dependencies = TRUE)
@@ -22,6 +22,9 @@ library(ggforce)
 library(MASS)
 library(shiny)
 
+getwd()
+
+### Loading data ----
 Pb_data <- read.csv("Data/Pb_tidy.csv")
 Pb_total <- read.csv("Data/Pb_total_LOD.csv")
 Pb_ratios <- read.csv("Data/Pb_ratio_data.csv")
