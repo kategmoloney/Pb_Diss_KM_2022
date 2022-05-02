@@ -2,7 +2,7 @@
 This is a public repository ontaining data, code and output for honours dissertation (2021/2022) in Ecological and Environmental Sciences, titled **"modelling the source and exposure of Pb in Scottish potable water"**
 
 ## Repository Navigation:
-The various dataset analyzed in this investigation can be accessed [here](https://github.com/kategmoloney/Pb_Diss_KM_2022/tree/main/Data)
+The various datasets analyzed in this investigation can be accessed [here](https://github.com/kategmoloney/Pb_Diss_KM_2022/tree/main/Data)
 
 The final script can be accessed [here](https://github.com/kategmoloney/Pb_Diss_KM_2022/blob/main/Pb_data_analysis.R)
 
