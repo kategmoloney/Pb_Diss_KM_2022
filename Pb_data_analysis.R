@@ -33,10 +33,10 @@ str(Pb_data)
 theme_ps <- function(){            # creating a new theme function
   theme(axis.title = element_text(size = 14,
                                   face = "bold"),
-        axis.text.x = element_text(size = 11,
+        axis.text.x = element_text(size = 9,
                                    vjust = 1,
                                    face = "bold"), 
-        axis.text.y = element_text(size = 11, face = "bold"),  # define font,
+        axis.text.y = element_text(size = 9, face = "bold"),  # define font,
         # font sizes, alignment
         #legend.position = "none",  # remove legend
         plot.margin = unit(c(0.5,0.5,0.5,0.5), units = , "cm"),  # create plot
@@ -264,25 +264,25 @@ factor(Legislative_cutoffs, levels = c("<1", "1-5", ">5"))
     xlim(1.05,1.18) +
     ylim(2,2.6) +
     theme_ps() + 
-   # scale_fill_manual(values = c("pink3", "yellow2", "royalblue3")) +
-   # scale_colour_manual(c("pink3", "yellow2", "royalblue3"))+
-   #scale_fill_discrete(limits = c("<1", "1-5", ">5")) +
-   scale_fill_manual(labels = c("<1", "1-5", ">5")) +
-    xlab("Pb206/Pb207\n") +                             
-    ylab("\nPb208/Pb207")+
+   #scale_fill_manual(labels = c("<1", "1-5", ">5")) +
+    xlab(bquote(Pb^206/Pb^207)) +                  
+    ylab(bquote(Pb^208/Pb^207)) +
+    guides(colour=guide_legend(title ="Concentration thresholds")) +
+    scale_fill_discrete(limits = c("<1", "1-5", ">5")) +
     scale_color_brewer(palette = "Paired") +
     theme(legend.position = "bottom")
 )
 
-(Pb_legcutoff_plot + scale_fill_hue(limits = c("<1", "1-5", ">5")))
+#(Pb_legcutoff_plot + scale_fill_hue(limits = c("<1", "1-5", ">5"))))
 
 plot_save(Pb_legcutoff_plot, file_name = "Plots/Mixing plot grouped by legaslative cutoffs", width = 13, 
           height = 8, dpi = 150) 
 
 (Leg_cutoffs_facet <- Pb_legcutoff_plot +
-    facet_grid(~factor(Legislative_cutoffs, levels = c("<1", "1-5", ">5"))))
-  #scale_fill_manual(labels = c("<1", "1-5", ">5"))
-  
+    facet_grid(~factor(Legislative_cutoffs, levels = c("<1", "1-5", ">5"))) +
+    scale_color_brewer(breaks=c("<1", "1-5", ">5"), palette = "Paired"))
+
+
 
 
 plot_save(Leg_cutoffs_facet, file_name = "Plots/Facet of legaslative cutoffs", width = 13, 
@@ -468,8 +468,8 @@ Central_data <- subset(Pb_total, OS_grid_region %in% c("NS", "NT"))
   theme_ps() + 
   # scale_fill_manual(values = c("pink3", "yellow2", "royalblue3")) +
   # scale_colour_manual(c("pink3", "yellow2", "royalblue3"))+
-  xlab("Pb206/Pb207\n") +                             
-  ylab("\nPb208/Pb207")+
+    xlab(bquote(Pb^206/Pb^207)) +                  
+    ylab(bquote(Pb^208/Pb^207)) +
   labs(caption = "Central Belt samples")+
   guides(colour=guide_legend(title="OS region")) + 
  scale_x_continuous(breaks = c(1.05,1.10,1.15,1.2)) +
@@ -496,8 +496,8 @@ NorthEast_data <- subset(Pb_total, OS_grid_region %in% c("NO", "NJ"))
   guides(colour=guide_legend(title="OS region")) +
   # scale_fill_manual(values = c("pink3", "yellow2", "royalblue3")) +
   # scale_colour_manual(c("pink3", "yellow2", "royalblue3"))+
-  xlab("Pb206/Pb207\n") +                             
-  ylab("\nPb208/Pb207")+
+  xlab(bquote(Pb^206/Pb^207)) +                  
+  ylab(bquote(Pb^208/Pb^207)) +
   labs(caption = "North east samples")+
   scale_x_continuous(breaks = c(1.05,1.10,1.15,1.2)) +
   scale_color_brewer(palette = "Paired") +
