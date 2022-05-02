@@ -242,9 +242,9 @@ Pb_data <- Pb_data %>%
 Pb_total <- Pb_total %>% 
   group_by(Legislative_cutoffs =
              case_when(
-               Total_Pb <1 ~ "less than one",
-               Total_Pb >=1 & Total_Pb <=5 ~ "one to five",
-               Total_Pb >5 ~ "greater than five", 
+               Total_Pb <1 ~ "<1",
+               Total_Pb >=1 & Total_Pb <=5 ~ "1-5",
+               Total_Pb >5 ~ ">5", 
              ))
 
 Pb_total_F <- Pb_total
@@ -253,7 +253,8 @@ Pb_total_F <- Pb_total
 levels(Pb_total_F$Legislative_cutoffs)<- c("<1", "1-5", ">5")
 
 Legislative_cutoffs <- factor(Pb_total_F$Legislative_cutoffs,
-                              levels = c("<1", "1-5", ">5"))
+                              levels = c("<1", "1-5", ">5"),
+                               labels = c("<1", "1-5", ">5"))
 
 factor(Legislative_cutoffs, levels = c("<1", "1-5", ">5"))
    
@@ -265,9 +266,11 @@ factor(Legislative_cutoffs, levels = c("<1", "1-5", ">5"))
     theme_ps() + 
    # scale_fill_manual(values = c("pink3", "yellow2", "royalblue3")) +
    # scale_colour_manual(c("pink3", "yellow2", "royalblue3"))+
-   scale_fill_discrete(limits = c("<1", "1-5", ">5")) +
+   #scale_fill_discrete(limits = c("<1", "1-5", ">5")) +
+   scale_fill_manual(labels = c("<1", "1-5", ">5")) +
     xlab("Pb206/Pb207\n") +                             
     ylab("\nPb208/Pb207")+
+    scale_color_brewer(palette = "Paired") +
     theme(legend.position = "bottom")
 )
 
@@ -276,7 +279,11 @@ factor(Legislative_cutoffs, levels = c("<1", "1-5", ">5"))
 plot_save(Pb_legcutoff_plot, file_name = "Plots/Mixing plot grouped by legaslative cutoffs", width = 13, 
           height = 8, dpi = 150) 
 
-(Leg_cutoffs_facet <- Pb_legcutoff_plot + facet_grid(cols = vars(Legislative_cutoffs)))
+(Leg_cutoffs_facet <- Pb_legcutoff_plot +
+    facet_grid(~factor(Legislative_cutoffs, levels = c("<1", "1-5", ">5"))))
+  #scale_fill_manual(labels = c("<1", "1-5", ">5"))
+  
+
 
 plot_save(Leg_cutoffs_facet, file_name = "Plots/Facet of legaslative cutoffs", width = 13, 
           height = 8, dpi = 150) 
@@ -455,7 +462,7 @@ Central_data <- subset(Pb_total, OS_grid_region %in% c("NS", "NT"))
 (Central_plot <- ggplot(Central_data, aes(x= Pb206_207 , y = Pb208_207,
                                    colour= OS_grid_region)) +
   geom_point(size = 2) +  # Changing point size 
-  facet_wrap(vars(Legislative_cutoffs)) +
+  facet_wrap(~factor(Legislative_cutoffs, levels = c("<1", "1-5", ">5"))) +
   #xlim(1.05,1.18) +
   #ylim(2,2.6) +
   theme_ps() + 
@@ -482,7 +489,7 @@ NorthEast_data <- subset(Pb_total, OS_grid_region %in% c("NO", "NJ"))
 (NorthEast_plot <- ggplot(NorthEast_data, aes(x= Pb206_207 , y = Pb208_207,
                                           colour= OS_grid_region))) +
   geom_point(size = 2) +  # Changing point size 
-  facet_wrap(vars(Legislative_cutoffs)) +
+  facet_wrap(~factor(Legislative_cutoffs, levels = c("<1", "1-5", ">5"))) +
   #xlim(1.05,1.18) +
   #ylim(2,2.6) +
   theme_ps() + 
