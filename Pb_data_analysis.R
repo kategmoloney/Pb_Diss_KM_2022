@@ -39,7 +39,7 @@ theme_ps <- function(){            # creating a new theme function
         axis.text.x = element_text(size = 9,
                                    vjust = 1,
                                    face = "bold"), 
-        axis.text.y = element_text(size = 9, face = "bold"),  # define font,
+        axis.text.y = element_text(size = 11, face = "bold"),  # define font,
         # font sizes, alignment
         #legend.position = "none",  # remove legend
         plot.margin = unit(c(0.5,0.5,0.5,0.5), units = , "cm"),  # create plot
@@ -382,8 +382,12 @@ Five_main_OS <- subset(Pb_total, OS_grid_region %in% c("NS", "NT", "NO", "NJ", "
   #scale_fill_manual(values = c("lightsalmon", "cadetblue4")) +
  # scale_colour_manual(values = c("lightsalmon", "cadetblue4")) +
   xlab("Pb206/Pb207\n") +                             
-  ylab("\nPb208/Pb207")+
+  xlab(bquote(Pb^206/Pb^207)) +                  
+  ylab(bquote(Pb^208/Pb^207)) +
+  guides(colour=guide_legend(title ="OS region"))+
+  scale_color_brewer(palette = "Paired")+
   labs(caption = "Five main OS regions", )+
+  facet_wrap(~factor(Legislative_cutoffs, levels = c("<1", "1-5", ">5"))) +
   theme(legend.position = "bottom", 
         plot.caption = element_text(hjust = 0.5))
 
@@ -391,20 +395,25 @@ plot_save(OS_region_five_main_plot, file_name = "Plots/Mixing plot of five main 
           width = 13, height = 8, dpi = 150) 
 
 (Five_mainOS_facet <- OS_region_five_main_plot + 
-    facet_grid(cols = vars(Legislative_cutoffs)))
+    facet_grid(~factor(Legislative_cutoffs, levels = c("<1", "1-5", ">5"))) +
+    scale_color_brewer(breaks=c("<1", "1-5", ">5"), palette = "Paired"))
+
 
 (OS_five_main_legcutoff_plot <- ggplot(Five_main_OS,aes(x= Pb206_207 , y = Pb208_207,
                                                     colour= Legislative_cutoffs))) +
   geom_point(size = 2, alpha = 0.5) +  # Changing point size and transparency
-  facet_wrap(vars(Legislative_cutoffs)) +
-  #xlim(1.05,1.18) +
-  #ylim(2,2.6) +
   theme_ps() + 
   #scale_fill_manual(values = c("lightsalmon", "cadetblue4")) +
   # scale_colour_manual(values = c("lightsalmon", "cadetblue4")) +
-  xlab("Pb206/Pb207\n") +                             
-  ylab("\nPb208/Pb207")+
+  xlab(bquote(Pb^206/Pb^207)) +                  
+  ylab(bquote(Pb^208/Pb^207)) +
+  guides(colour=guide_legend(title ="Concentration thresholds")) +
+  #scale_fill_discrete(limits = c("<1", "1-5", ">5")) +
+  #scale_color_brewer(palette = "Paired") +
+  theme(legend.position = "bottom")+
   labs(caption = "Five main OS regions", )+
+  facet_wrap(~factor(Legislative_cutoffs, levels = c("<1", "1-5", ">5"))) +
+  scale_color_brewer(breaks=c("<1", "1-5", ">5"), palette = "Paired") +
   theme(legend.position = "bottom", 
         plot.caption = element_text(hjust = 0.5))
 
@@ -412,23 +421,27 @@ plot_save(OS_five_main_legcutoff_plot, file_name = "Plots/Mixing plot of five ma
           width = 13, height = 8, dpi = 150) 
 
 (OS_five_main_legcutoff_plot_facet <- OS_five_main_legcutoff_plot + 
-    facet_grid(cols = vars(Legislative_cutoffs)))
+    facet_wrap(~factor(Legislative_cutoffs, levels = c("<1", "1-5", ">5"))) +
+    scale_color_brewer(breaks=c("<1", "1-5", ">5"), palette = "Paired"))
 
 
-(OS_grouping_five_main_plot <- ggplot(Five_main_OS,aes(x= Pb206_207 , y = Pb208_207,
-                                                       colour= OS_grouping))) +
-    geom_point(size = 2, alpha = 0.5) +  # Changing point size and transparency
-  facet_wrap(vars(Legislative_cutoffs)) + 
-    #xlim(1.05,1.18) +
-    #ylim(2,2.6) +
-    theme_ps() + 
-    scale_fill_manual(values = c("lightsalmon", "cadetblue4")) +
-    scale_colour_manual(values = c("lightsalmon", "cadetblue4")) +
-    xlab("Pb206/Pb207\n") +                             
-    ylab("\nPb208/Pb207")+
-    labs(caption = "North/South grouping of five main OS regions", )+
-    theme(legend.position = "bottom", 
-          plot.caption = element_text(hjust = 0.5))
+(OS_region_five_main_plot <- ggplot(Five_main_OS,aes(x= Pb206_207 , y = Pb208_207,
+                                                     colour= OS_grouping))) +
+  geom_point(size = 2, alpha = 0.5) +  # Changing point size and transparency
+  #xlim(1.05,1.18) +
+  #ylim(2,2.6) +
+  theme_ps() + 
+  #scale_fill_manual(values = c("lightsalmon", "cadetblue4")) +
+  # scale_colour_manual(values = c("lightsalmon", "cadetblue4")) +
+  xlab("Pb206/Pb207\n") +                             
+  xlab(bquote(Pb^206/Pb^207)) +                  
+  ylab(bquote(Pb^208/Pb^207)) +
+  guides(colour=guide_legend(title ="OS grouping"))+
+  scale_color_brewer(palette = "Paired")+
+  labs(caption = "Five main OS regions", )+
+  facet_wrap(~factor(Legislative_cutoffs, levels = c("<1", "1-5", ">5"))) +
+  theme(legend.position = "bottom", 
+        plot.caption = element_text(hjust = 0.5))
 
 plot_save(OS_grouping_five_main_plot, file_name = "Plots/Mixing plot of five main OS regions grouped by North/South classification", 
           width = 13, height = 8, dpi = 150) 
